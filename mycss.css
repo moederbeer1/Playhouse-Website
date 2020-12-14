@@ -46,8 +46,9 @@
 }
 .thisone {
     background-size: cover;
-    height: 100vh;
     background-position-x: left;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 #topDiv {
