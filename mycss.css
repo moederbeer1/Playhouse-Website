@@ -45,10 +45,20 @@
     transform: translate3d(0, 0, 0);
 }
 .thisone {
-    background-size: cover;
     background-position-x: left;
+    background-size: cover;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
+}
+
+.thisanimate {
+    animation: movebg 7s linear infinite;
+}
+
+@-webkit-keyframes movebg {
+    to {
+        background-position-x: right;
+    }
 }
 
 #topDiv {
