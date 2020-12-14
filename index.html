@@ -2766,30 +2766,31 @@
         </section>
     </body>
     
-     <script>
-        var spost;
-
-        $(window).resize(function () {
-            spost = window.innerWidth * 100 / 1536;
+         <script>
+        function changeHeight() {
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
+        }
+
+        $(window).resize(function () {
+            changeHeight();
         });
 
         $(document).ready(function () {
-            spost = window.innerWidth * 100 / 1536;
+            changeHeight();
             $("#myCarousel").on("slid.bs.carousel", function ($this) {
                 var from = $(this).find(".thisone").eq($this["from"]);
                 var to = $(this).find(".thisone").eq($this["to"]);
                 setTimeout(function () {
                     from.removeClass("thisanimate");
-//                    from.css("background-position-x", "left");
-                    from.css("background-position-x", spost + "%");
+                    from.css("background-position-x", "left");
                 }, 3000);
                 to.addClass("thisanimate");
             });
         });
 
     </script>
+
     
 </html>
 
