@@ -2765,18 +2765,28 @@
 
         </section>
     </body>
+    
     <script>
+        var spost;
+
+        $(window).resize(function () {
+            spost = window.innerWidth * 100 / 1536;
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+        });
 
         $(document).ready(function () {
-            $(".thisone").eq(0).animate({"background-position-x": "100%"}, 7000, "linear");
+            spost = window.innerWidth * 100 / 1536;
+
+            $(".thisone").eq(0).animate({"background-position-x": spost + "%"}, 7000, "linear");
 
             $("#myCarousel").on("slide.bs.carousel", function ($this) {
                 var el = $(this).find(".thisone").eq($this["to"]);
                 el.css("background-position-x", "left");
-                el.animate({"background-position-x": "100%"}, 7000, "linear");
+                el.animate({"background-position-x": spost + "%"}, 7000, "linear");
             });
         });
-
     </script>
+    
 </html>
 
