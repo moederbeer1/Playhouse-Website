@@ -57,7 +57,7 @@
 
 @-webkit-keyframes movebg {
     to {
-        background-position-x: right;
+        background-position-x: calc(100vw * 100 / -1536);
     }
 }
 
