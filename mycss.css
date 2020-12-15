@@ -201,7 +201,7 @@
     }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (orientation: landscape) {
     @-webkit-keyframes movebg {
         to {
             background-position-x: calc(100vw * 100 / -1536);
