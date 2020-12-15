@@ -2766,7 +2766,9 @@
         </section>
     </body>
     
-         <script>
+         
+
+    <script>
         function changeHeight() {
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -2784,6 +2786,7 @@
                 setTimeout(function () {
                     from.removeClass("thisanimate");
                     from.css("background-position-x", "left");
+                    from.css("transform", "translateX(0%)");
                 }, 3000);
                 to.addClass("thisanimate");
             });
