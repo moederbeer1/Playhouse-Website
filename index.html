@@ -37,7 +37,7 @@
                 <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="5000">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="thisone thisanimate" style="background-image: url('1.jpg')"></div>
+                            <div class="thisone" style="background-image: url('1.jpg')"></div>
                         </div>
                         <div class="carousel-item">
                             <div class="thisone" style="background-image: url('2.jpg')"></div>
@@ -2784,11 +2784,11 @@
                 var from = $(this).find(".thisone").eq($this["from"]);
                 var to = $(this).find(".thisone").eq($this["to"]);
                 setTimeout(function () {
-                    from.removeClass("thisanimate");
-                    from.css("background-position-x", "left");
-                    from.css("transform", "translateX(0%)");
+                    //from.removeClass("thisanimate");
+                    //from.css("background-position-x", "left");
+                    //from.css("transform", "translateX(0%)");
                 }, 3000);
-                to.addClass("thisanimate");
+                //to.addClass("thisanimate");
             });
         });
 
