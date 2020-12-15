@@ -149,17 +149,6 @@
 }
 
 #minesvg {
-    -webkit-transform-origin: 50% -300%;
-    -ms-transform-origin: 50% -300%;
-    transform-origin: 50% -300%;
-    -webkit-animation: pulse;
-    animation: pulse;
-    -webkit-animation-duration: 5s;
-    animation-duration: 5s;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
     max-width: 100%;
 }
 
@@ -228,6 +217,20 @@
         padding-top: 0;
         margin-bottom: 15px;
     }
+    
+#minesvg {
+    -webkit-transform-origin: 50% -300%;
+    -ms-transform-origin: 50% -300%;
+    transform-origin: 50% -300%;
+    -webkit-animation: pulse;
+    animation: pulse;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
 
     #bottomDiv {
         padding: 0 0 30px 0;
