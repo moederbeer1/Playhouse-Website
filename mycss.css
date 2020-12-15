@@ -1,6 +1,7 @@
+
 @font-face {
     font-family: minefont;
-    src: url(Minercraftory.ttf);
+    src: url(../../Minercraftory.ttf);
 }
 
 .nopadding {
@@ -49,16 +50,38 @@
     background-size: cover;
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
+    width:200%;
 }
 
 .thisanimate {
-    animation: movebg 7s linear infinite;
+    -webkit-animation: movebg 10s linear infinite;
+            animation: movebg 10s linear infinite;
 }
 
-@-webkit-keyframes movebg {
-    to {
-        background-position-x: calc(100vw * 100 / -1536);
-    }
+
+#mainDiv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    text-align: center;
+}
+#mainDiv * {
+    text-align: center;
 }
 
 #topDiv {
@@ -126,39 +149,14 @@
     top: 8px;
 }
 
-#mainDiv {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    position: absolute;
-    top: 0;
-    z-index: 999;
-    width: 100vw;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    text-align: center;
-}
-#mainDiv * {
-    text-align: center;
-}
-
 #minesvg {
-    -webkit-transform-origin: 50% -300%;
-    -ms-transform-origin: 50% -300%;
-    transform-origin: 50% -300%;
+    -webkit-transform-origin: 50% -100%;
+    -ms-transform-origin: 50% -100%;
+    transform-origin: 50% -100%;
     -webkit-animation: pulse;
     animation: pulse;
-    -webkit-animation-duration: 10s;
-    animation-duration: 10s;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: ease-in-out;
@@ -168,19 +166,8 @@
 
 @-webkit-keyframes pulse {
     50% {
-        -webkit-transform: translate(0px, 30%) scale(0.9);
-        transform: translate(0px, 30%) scale(0.9);
-    }
-    100% {
-        -webkit-transform: translate(0px, 0px) scale(1);
-        transform: translate(0px, 0px) scale(1);
-    }
-}
-
-@keyframes pulse {
-    50% {
-        -webkit-transform: translate(0px, 30%) scale(0.9);
-        transform: translate(0px, 30%) scale(0.9);
+        -webkit-transform: translate(0px, 30%) scale(0.7);
+        transform: translate(0px, 30%) scale(0.7);
     }
     100% {
         -webkit-transform: translate(0px, 0px) scale(1);
@@ -217,8 +204,21 @@
         padding: 18px 24px 16px 24px;
     }
 }
+@media (max-width: 1399.99px) {
+    @-webkit-keyframes movebg {
+        to {
+            -webkit-transform: translateX(-10%);
+                    transform: translateX(-10%);
+        }
+    }
+}
 
 @media (min-width: 1400px) {
+    @-webkit-keyframes movebg {
+        to {
+            background-position-x: calc(100vw * 100 / -1536);
+        }
+    }
     .thisone {
         background-size: 110vw;
     }
