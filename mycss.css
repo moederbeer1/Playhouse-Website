@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: minefont;
-    src: url(Minercraftory.ttf);
+    src: url(../../Minercraftory.ttf);
 }
 
 .nopadding {
@@ -55,7 +55,7 @@
 
 .thisanimate {
     -webkit-animation: movebg 10s linear infinite;
-            animation: movebg 10s linear infinite;
+    animation: movebg 10s linear infinite;
 }
 
 
@@ -166,8 +166,8 @@
 
 @-webkit-keyframes pulse {
     50% {
-        -webkit-transform: translate(0px, 30%) scale(0.7);
-        transform: translate(0px, 30%) scale(0.7);
+        -webkit-transform: translate(0px, 30%) scale(0.9);
+        transform: translate(0px, 30%) scale(0.9);
     }
     100% {
         -webkit-transform: translate(0px, 0px) scale(1);
@@ -208,7 +208,7 @@
     @-webkit-keyframes movebg {
         to {
             -webkit-transform: translateX(-10%);
-                    transform: translateX(-10%);
+            transform: translateX(-10%);
         }
     }
 }
