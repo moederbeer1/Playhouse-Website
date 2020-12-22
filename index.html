@@ -33,6 +33,9 @@
             changeHeight();
         });
             
+
+        $(document).ready(function () {
+            changeHeight();
             $("#myCarousel").on("slid.bs.carousel", function ($this) {
                 var from = $(this).find(".thisone").eq($this["from"]);
                 var to = $(this).find(".thisone").eq($this["to"]);
@@ -43,9 +46,6 @@
                 }, 3000);
                 to.addClass("thisanimate");
             });
-
-        $(document).ready(function () {
-            changeHeight();
         });
 
     </script>
