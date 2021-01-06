@@ -23,34 +23,6 @@
 
     <body>
         
-        <script>
-        function changeHeight() {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty("--vh", `${vh}px`);
-        }
-
-        $(window).resize(function () {
-            changeHeight();
-        });
-            
-
-        $(document).ready(function () {
-            changeHeight();
-            $("#myCarousel").on("slid.bs.carousel", function ($this) {
-                var from = $(this).find(".thisone").eq($this["from"]);
-                var to = $(this).find(".thisone").eq($this["to"]);
-                setTimeout(function () {
-                    from.removeClass("thisanimate");
-                    from.css("background-position-x", "left");
-                    from.css("transform", "translateX(0%)");
-                }, 3000);
-                to.addClass("thisanimate");
-            });
-        });
-
-    </script>
-        
-        
         <!-- Page Content -->
         <section>
 
@@ -88,6 +60,7 @@
                         <div class="carousel-item">
                             <div class="thisone" style="background-image: url('pics/10.jpg')"></div>
                         </div>
+                        <!--
                         <div class="carousel-item">
                             <div class="thisone" style="background-image: url('pics/11.jpg')"></div>
                         </div>
@@ -241,6 +214,7 @@
                         <div class="carousel-item">
                             <div class="thisone" style="background-image: url('pics/61.jpg')"></div>
                         </div>
+                        -->
                     </div>
                 </div>
 
@@ -2958,8 +2932,8 @@
 
         </section>
     </body>
-    
-    <script>
+        
+        <script>
         function changeHeight() {
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -2968,8 +2942,8 @@
         $(window).resize(function () {
             changeHeight();
         });
+            
 
-        /*
         $(document).ready(function () {
             changeHeight();
             $("#myCarousel").on("slid.bs.carousel", function ($this) {
@@ -2982,10 +2956,24 @@
                 }, 3000);
                 to.addClass("thisanimate");
             });
+            
+           
+            var newImage = $("#clone").html();
+
+            for (let step = 11; step <= 61; step++) {
+                console.log(step);
+                console.log(newImage.replace("XXX", step));
+                $("#targetto").append(newImage.replace("XXX", step));
+            };
+            
         });
-        */
 
     </script>
+    
+    </html>
 
-</html>
+<div id="clone" style="display: none !important;">
+    <div class="carousel-item"><div class="thisone" style="background-image: url('XXX.jpg')"></div></div>
+</div>
+
 
