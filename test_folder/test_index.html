@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>PlayHouse SMP Minecraft Server</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="mycss.css" rel="stylesheet">
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="jquery.js"></script>
+        <script src="bootstrap.bundle.min.js"></script>
+
+    </head>
+
+    <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+	 <img src="playhouselogo.svg" width="180" height="40" alt="" style="padding-left: 9px;">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="test_index.html">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="dynmap.html">Dynmap</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+        <!-- Page Content -->
+        <section>
+            <div class="container-fluid nopadding">
+
+                <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="5000">
+                    <div class="carousel-inner" id="targetto">
+
+                        <div class="carousel-item active">
+                            <div class="thisone thisanimate"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+<div>
+
+    </body>
+
+
+    <div id="clone" style="display: none !important;">
+        <div class="carousel-item"><div class="thisone" style="background-image: url('pics/XXX.jpg')"></div></div>
+    </div>
+
+
+    <script>
+//        Change this to total number of images
+        var N = 61;
+
+//        Change div height depending on screen
+        function changeHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+        }
+        $(window).resize(function () {
+            changeHeight();
+        });
+
+
+//            Create array from 1 to N
+        var images = new Array;
+        for (let arrind = 1; arrind <= N; arrind++) {
+            images.push(arrind);
+        }
+
+//            Randomize images using Durstenfeld shuffle algorithm
+        function shuffleArray(images) {
+            for (var i = images.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = images[i];
+                images[i] = images[j];
+                images[j] = temp;
+            }
+        }
+        shuffleArray(images);
+
+//            Display first and second images otherwise slideshow doesnt start
+        var newImage = $("#clone").html();
+        $("#targetto .carousel-item .thisone").attr("style", "background-image: url('pics/" + images[0] + ".jpg')");
+        $("#targetto").append(newImage.replace("XXX", images[1]));
+
+
+        var gne = 1;
+
+        $(document).ready(function () {
+            changeHeight();
+            $("#myCarousel").on("slid.bs.carousel", function ($this) {
+                var from = $(this).find(".thisone").eq($this["from"]);
+                var to = $(this).find(".thisone").eq($this["to"]);
+
+//                Display next next image
+                gne++;
+                if (gne < N) {
+                    $("#targetto").append(newImage.replace("XXX", images[$this["to"] + 1]));
+                }
+
+//                Animate next image
+                setTimeout(function () {
+                    from.removeClass("thisanimate");
+                    from.css("background-position-x", "left");
+                    from.css("transform", "translateX(0%)");
+                }, 3000);
+                to.addClass("thisanimate");
+            });
+        });
+
+    </script>
+
+</html>
