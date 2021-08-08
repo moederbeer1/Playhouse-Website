@@ -89,7 +89,6 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-`
 #subtitle {
     font-size: 13px;
     padding-left: 10px;
@@ -165,7 +164,7 @@
     }
 }
 
-@media (min-width: 376px) {
+@media (min-width: 576px) {
     #subtitle {
         font-size: 20px;
     }
@@ -205,13 +204,11 @@
 
 @media (min-aspect-ratio: 16/10) {
     .thisone {
-        background-size: 115vw;
+        background-size: 115vw auto;
     }
 }
-.carousel-inner img {
-  margin: auto;
-}
-@media (min-width: 400px) and (orientation: landscape) {
+
+@media (min-width: 1400px) and (orientation: landscape) {
     @-webkit-keyframes movebg {
         to {
             background-position-x: calc(100vw * 100 / -1536);
