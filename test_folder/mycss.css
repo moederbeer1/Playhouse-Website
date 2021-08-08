@@ -29,7 +29,6 @@
     opacity: 1;
 }
 
-
 .carousel-fade .active.carousel-item-left,
 .carousel-fade .active.carousel-item-right {
     opacity: 0;
@@ -48,8 +47,8 @@
 .thisone { background-position-y: center;
     background-position-x: left;
     /*background-size: cover;*/
-    background-size: auto 100%;
-    height: 100%;
+    background-size: auto 100vh;
+    height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     width:200%;
 }
@@ -84,7 +83,6 @@
 #mainDiv * {
     text-align: center;
 }
-
 
 #topDiv {
     padding-top: 20px;
