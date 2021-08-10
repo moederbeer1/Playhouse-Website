@@ -38,11 +38,17 @@
   margin-right: 10px;
   float: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 668px) {
 .fbutton {
-    width: 60px;
+    width: 50px;
     height: 55px;
-    font-size: 10px;
+    font-size: 9px;
+    padding: 0.4px;
+    margin: 0.4px;
+    box-shadow: 2px 2px 0 #77818f,
+        -2px -2px 0 #77818f,
+        -2px 2px 0 #77818f,
+        2px -2px 0 #77818f;
 }
 }
 .gback{
