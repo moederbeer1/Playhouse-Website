@@ -20,12 +20,11 @@
             user-select: none;
         -webkit-tap-highlight-color: transparent;
 }
-
 .fbutton {
-    width: 120px;
-    height: 75px;
+    width: 100px;
+    height: 55px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     color: black;
     background: rgba(255,255,255,0.7);
@@ -38,6 +37,13 @@
   margin-left: 10px;
   margin-right: 10px;
   float: center;
+}
+@media (max-width: 768px) {
+.fbutton {
+    width: 60px;
+    height: 55px;
+    font-size: 10px;
+}
 }
 .gback{
     background-color: #FDAC53;
