@@ -641,5 +641,6 @@ margin-right: 10px;
     .fbutton {
         width: 80px;
         margin: .4rem;
+        font-size: 9px;
     }
 }
