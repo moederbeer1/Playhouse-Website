@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>PlayHouse SMP Minecraft Server</title>
+    <!-- Bootstrap core JavaScript -->
+    <script src="jquery.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="test_mycss.css" rel="stylesheet">
+    <!-- Jquery -->
+            <link href="test_mycss.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <nav class="navbar fixed-top navbar-expand-lg custom-toggler navbar-custom">
+      <a href="test_index.html"><img src="playhouselogo.svg" alt="Playhouse logo" width="180" height="40" style="margin-right: 5%; margin-left: 5%; padding-right: 5%;"></a>
+      <button class="navbar-toggler mr-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item active"> <a class="nav-link navbar-text" href="test_index.html">Home <span class="sr-only"></span></a> </li>
+          <div class="dropdown-divider"></div>
+          <li class="nav-item"> <a class="nav-link navbar-text" href="dynmap.html">Dynmap</a> </li>
+          <div class="dropdown-divider"></div>
+          <li class="nav-item"> <a class="nav-link navbar-text" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a> </li>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown nav-link navbar-text" style="margin-right: 0px;">
+            <button class="btn btn-transparent dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: -6.7px; margin-left: -12.7px; color: black;"> More Info </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="left:-70px;">
+              <a class="dropdown-item navbar-text" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item navbar-text" href="members.html">Meet The Members</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item navbar-text" href="who.html">Who Are We</a> 
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+
+    <div style="align-content: center;">
+    <div class="layer" style="margin-top: 85px;">
+      <h2 class="h2e" style="text-align: center; align-content: center; ">
+       Welcome to Playhouse
+      </h1>
+    </h2>
+   
+ <!--Content-->
+    <div class="mt-32:lg mt-3 gback"></div>
+        <hr class="mx-auto" style="width:30%;"/>
+
+<div style="margin-top: -2rem">
+    <div class="grid grid-cols-1 p-2" >
+        <div class="place-self-center text-center text-gray-100 text-xl my-4 ">
+            <div class="p-2 rounded-lg bg-gray-500">There are currently<span class="px-1 font-bold" data-playercounter-ip="minecraft.playhousesmp.com" data-playercounter-format="{online}/{max}"></span></b> <br> </span> players on the<span class="pl-1 font-bold">PlayhouseSMP Server</span>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<div class="overlay-right d-flex justify-content-center">
+  <a href="https://playhouse.programmerhumor.io/season_1.rar"><button class="name noselect fbutton ">S1 World Download</button>
+     <a href="videos.html"><button class="name noselect fbutton ">Playhouse Videos</button>
+ <a href="test_index.html">
+<button class="name noselect fbutton ">Coming Soon</button>
+</div>
+
+
+  </div>
+      <div id="carbon-block"></div>
+    </div>
+    </div>
+  <script src="jquery-background-slideshow.js"></script>
+  <script>
+    $(document).ready(function () {
+      /*
+              $(".layer").backgroundSlideshow({
+                  delay: 3000,
+                  transitionDuration: 3000,
+                  images: [
+                      "assets/images/image3.jpeg",
+                      "assets/images/image4.jpeg"
+                  ]
+              })
+      */
+      function shuffle(array) {
+        var currentIndex = array.length, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+      }
+
+      var arr = [
+       "pics/1.jpg",
+"pics/2.jpg",
+"pics/3.jpg",
+"pics/4.jpg",
+"pics/5.jpg",
+"pics/6.jpg",
+"pics/7.jpg",
+"pics/8.jpg",
+"pics/9.jpg",
+"pics/10.jpg",
+"pics/11.jpg",
+"pics/12.jpg",
+"pics/13.jpg",
+"pics/14.jpg",
+"pics/15.jpg",
+"pics/16.jpg",
+"pics/17.jpg",
+"pics/18.jpg",
+"pics/19.jpg",
+"pics/20.jpg",
+"pics/21.jpg",
+"pics/22.jpg",
+"pics/23.jpg",
+"pics/24.jpg",
+"pics/25.jpg",
+"pics/26.jpg",
+"pics/27.jpg",
+"pics/28.jpg",
+"pics/29.jpg",
+"pics/30.jpg",
+"pics/31.jpg",
+"pics/32.jpg",
+"pics/33.jpg",
+"pics/34.jpg",
+"pics/35.jpg",
+"pics/36.jpg",
+"pics/37.jpg",
+"pics/38.jpg",
+"pics/39.jpg",
+"pics/40.jpg",
+"pics/41.jpg",
+"pics/42.jpg",
+"pics/43.jpg",
+"pics/44.jpg",
+"pics/45.jpg",
+"pics/46.jpg",
+"pics/47.jpg",
+"pics/48.jpg",
+"pics/49.jpg",
+"pics/50.jpg",
+"pics/51.jpg",
+"pics/52.jpg",
+"pics/53.jpg",
+"pics/54.jpg",
+"pics/55.jpg",
+"pics/56.jpg",
+"pics/57.jpg",
+"pics/58.jpg",
+"pics/59.jpg",
+"pics/60.jpg",
+"pics/61.jpg"
+      ];
+      shuffle(arr);
+        console.log(arr);
+
+      $("body").backgroundSlideshow({
+        onBeforeTransition: function (index) {
+          console.log("before transition", index)
+        },
+        onAfterTransition: function (index) {
+          console.log("after transition", index)
+        },
+        transitionDuration: 3000,
+        fixed: true,
+        images: arr,
+
+      })
+    })
+  </script>
+      <!--Scripts-->
+   <script src="https://leonardosnt.github.io/mc-player-counter/dist/mc-player-counter.min.js"></script>
+  </body>
+</html>
