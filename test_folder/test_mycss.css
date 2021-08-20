@@ -632,7 +632,7 @@ margin-right: 10px;
   color: black;
 }
 
-@media(max-width: 602p1) {
+@media(max-width: 601px) {
     .layer {
         padding: 30px 10px;
         width: 90%;
