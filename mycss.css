@@ -26,6 +26,9 @@ section {
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
+.boldcard{
+    font-weight: bold; 
+}
 section .section-title {
     text-align: center;
     color: #007b5e;
