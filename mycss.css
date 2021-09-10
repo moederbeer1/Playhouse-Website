@@ -20,7 +20,12 @@
 section {
     padding: 60px 0;
 }
-
+.card-text{
+    font-weight: bolder; 
+    font-size: 22px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
 section .section-title {
     text-align: center;
     color: #007b5e;
@@ -78,6 +83,7 @@ section .section-title {
 .frontside .card,
 .backside .card {
     min-height: 312px;
+
 }
 
 .backside .card a {
@@ -217,8 +223,9 @@ a {
   margin-right: auto;
         }
 .mcicon{
-    width:80%; 
+    width:100%; 
     display: block; 
+    margin: 0 auto;
     margin-top: 8px;
     margin-left: auto; 
     margin-right: auto;
@@ -643,4 +650,9 @@ margin-right: 10px;
         margin: .4rem;
         font-size: 9px;
     }
+}
+
+
+.card-body p img {
+    margin-top: 30px;
 }
