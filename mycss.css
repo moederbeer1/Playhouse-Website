@@ -120,6 +120,13 @@ section .section-title {
     height: 50px;
     border-radius: 50%;
 }
+    .whoimage{
+    float: left; 
+    width: 10%; 
+    max-height: 10%; 
+    padding-right: 2%;
+    padding-top: 1.4%;
+}
 }
 
 @font-face {
@@ -487,6 +494,7 @@ margin-right: 10px;
         font-size: 20px;
         margin: 0;
     }
+
 }
 
 @media (min-width: 768px) {
@@ -661,4 +669,11 @@ margin-right: 10px;
 }
 .whotext{
     margin-bottom: 3px;
+}
+.whoimage{
+    float: left; 
+    max-width: 20%; 
+    max-height: 30%; 
+    padding-right: 2%;
+    padding-top: 1.4%;
 }
