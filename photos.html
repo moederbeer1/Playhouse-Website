@@ -12,44 +12,44 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
 </head>
 <body class="photo-gallery-background">
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container navbar-container">
-            <a class="navbar-brand" href="index.html">
-                <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dynmap.html">World Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            More Info
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="downloads.html">Download Past Seasons</a>
-                            <a class="dropdown-item" href="photos.html">Our Photos</a>
-                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
-                            <a class="dropdown-item" href="members.html">Meet The Staff</a>
-                            <a class="dropdown-item" href="who.html">Who Are We</a>
-                        </div>
-                    </li>
-                </ul>
+    
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container navbar-container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dynmap.html">World Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                More Info
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="downloads.html">Download Past Seasons</a>
+                                <a class="dropdown-item" href="photos.html">Our Photos</a>
+                                <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
+                                <a class="dropdown-item" href="members.html">Meet The Staff</a>
+                                <a class="dropdown-item" href="who.html">Who Are We</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
   
-
     <!-- Background Slideshow -->
     <div class="background-slideshow-container">
         <div class="background-slideshow"></div>
@@ -58,7 +58,17 @@
     <!-- Main Content Area -->
     <div class="container photo-gallery-container pt-5">
         <h2 class="text-center mb-4 styled-heading">Photo Gallery</h2>
-        <div class="row portfolio-item" id="photoGallery"></div>
+        <div class="portfolio-menu text-center mb-4">
+            <ul class="list-inline">
+                <li class="list-inline-item active" data-filter="*">All Photos</li>
+                <li class="list-inline-item" data-filter=".season1">Seasons 1-4</li>
+                <li class="list-inline-item" data-filter=".season5">Season 5</li>
+                <li class="list-inline-item" data-filter=".eventServer">Event Server</li>
+            </ul>
+        </div>
+        <div class="row portfolio-item" id="photoGallery"></div>        
+        </div>
+        
     </div>
 
     <!-- Bootstrap and jQuery Scripts -->
@@ -68,67 +78,86 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/isotope/3.0.6/isotope.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <script src="jquery-background-slideshow.js"></script>
-    <!-- Custom Script for random background slideshow and gallery functionality -->
+    <!-- Custom Script for random background slideshowHere's the rest of the script with added debugging statements:
+
+```javascript
+    and gallery functionality -->
     <script>
-        $(document).ready(() => {
-            const shuffle = (array) => {
-                let currentIndex = array.length,
-                    randomIndex;
-                while (currentIndex !== 0) {
-                    randomIndex = Math.floor(Math.random() * currentIndex);
-                    currentIndex--;
-                    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById('photoGallery');
+            const categories = [
+                { name: 'season1', count: 82 },
+                { name: 'season5', count: 5 },
+                { name: 'eventServer', count: 6 }
+            ];
+        
+            // Dynamically load images
+            categories.forEach(category => {
+                for (let i = 1; i <= category.count; i++) {
+                    const imgDiv = document.createElement('div');
+                    imgDiv.className = `col-md-4 item ${category.name}`;
+                    // Ensure the image has a 'data-mfp-src' attribute for Magnific Popup
+                    imgDiv.innerHTML = `<img src="pics/gallery/${category.name}/${i}.jpg" class="img-fluid popup-btn" data-mfp-src="pics/gallery/${category.name}/${i}.jpg">`;
+                    gallery.appendChild(imgDiv);
                 }
-                return array;
-            };
-            const images = Array.from({ length: 82 }, (_, i) => `pics/background/${i + 1}.jpg`);
-            shuffle(images);
-
-            const slideshowContainer = $('.background-slideshow');
-            images.forEach((image) => {
-                const imgElement = `<img src="${image}" alt="">`;
-                slideshowContainer.append(imgElement);
             });
-
-            $("body.photo-gallery-background").backgroundSlideshow({
-                onBeforeTransition: (index) => console.log("before transition", index),
-                onAfterTransition: (index) => console.log("after transition", index),
-                transitionDuration: 3000,
-                fixed: true,
-                images
-            });
-
-            const galleryContainer = $('#photoGallery');
-            images.forEach((image, index) => {
-                const category = `category${(index % 3) + 1}`; // Assign categories 1, 2, 3 in a loop
-                const imageHtml = `
-                    <div class="col-lg-3 col-md-4 col-xs-6 thumb ${category} mb-4">
-                        <a href="${image}" class="fancybox popup-btn" rel="ligthbox">
-                            <img src="${image}" class="zoom img-fluid" alt="">
-                        </a>
-                    </div>`;
-                galleryContainer.append(imageHtml);
-            });
-
-            $('.portfolio-menu ul li').click(function() {
-                $('.portfolio-menu ul li').removeClass('active');
-                $(this).addClass('active');
-                
-                var selector = $(this).attr('data-filter');
-                $('.portfolio-item').isotope({
-                    filter: selector
+        
+            // Filtering logic
+            const buttons = document.querySelectorAll('.portfolio-menu ul li');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    const items = document.querySelectorAll('.portfolio-item .item');
+        
+                    items.forEach(item => {
+                        if (filter === '*' || item.classList.contains(filter.slice(1))) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+        
+                    // Update active state
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
                 });
-                return false;
             });
-
-            var popup_btn = $('.popup-btn');
-            popup_btn.magnificPopup({
+        
+            // Reinitialize Magnific Popup for dynamically loaded images
+            $('.portfolio-item').magnificPopup({
+                delegate: '.popup-btn', // the selector for gallery item
                 type: 'image',
                 gallery: {
                     enabled: true
                 }
             });
         });
-    </script>
+        </script>
+            <script>
+$(document).ready(() => {
+    const shuffle = (array) => {
+        let currentIndex = array.length, randomIndex;
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    };
+
+    const images = Array.from({ length: 82 }, (_, i) => `pics/background/${i + 1}.jpg`);
+    const shuffledImages = shuffle(images);
+
+    $(".background-slideshow").backgroundSlideshow({
+        images: shuffledImages,
+        transitionDuration: 3000,
+        fixed: true,
+        onBeforeTransition: (index) => console.log("before transition", index),
+        onAfterTransition: (index) => console.log("after transition", index)
+    });
+});
+
+              </script>
+        
 </body>
 </html>
