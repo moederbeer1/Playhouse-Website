@@ -16,16 +16,16 @@ const seasons = [
     },
     {
         title: "Season 4",
-        description: "The latest adventures await in our fourth season",
+        description: "Download the adventures from our fourth season. Note: Season 5 is currently ongoing.",
         thumbnail: "pics/season/s4.jpg",
-        downloadLink: "https://drive.google.com/uc?export=download&id=18ljToQ5u3T1MbcUr0LVyZ94lZRYBfhaN",
+        downloadLink: "Downloads/Playhouse_SMP_S4.zip",
         size: "2.76 GB"
     },
     {
         title: "Skyblock Modded",
-        description: "The latest adventures await in our modded Skyblock season",
+        description: "We use a modded skyblock called Infinite Skyblock. Take on the unique challenges of this customized skyblock adventure.",
         thumbnail: "pics/season/skyblock.png",
-        downloadLink: "https://drive.google.com/uc?export=download&id=19VpWrNW_q7rvAmt90LPc32D7_ecokCtt",
+        downloadLink: "Downloads/Playhouse_Skyblock.zip",
         size: "186 MB"
     }
 ];
