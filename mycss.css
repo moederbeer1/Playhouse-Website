@@ -455,7 +455,19 @@ a:hover {
         flex: 0 0 33.333333%; /* Adjusts items to take one-third the width on medium screens */
         max-width: 33.333333%;
     }
+
 }
+
+.team-last1 {
+    margin-left: 33.33333%;
+}
+@media (max-width: 768px) {
+    .team-last1 {
+        margin-left: 0% !important;
+    }
+}
+
+
 
 @media (min-width: 992px) {
     .item {
