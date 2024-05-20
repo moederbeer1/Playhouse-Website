@@ -81,8 +81,6 @@ body {
     }
 }
 
-
-
 /* Main Content Styling */
 .container {
     padding: 20px;
@@ -336,6 +334,17 @@ a:hover {
     background: rgba(63, 49, 73, 0.72) !important; /* Semi-transparent white background */
 }
 
+.background-slideshow {
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  
+    overflow: hidden;
+    filter: blur(16px);  
+}
+
 .image-border {
     border: 1.2px solid #f0ad4e; /* Purple border from your logo */
     box-shadow: 0 12px 32px rgba(128, 0, 128, 0.45); /* Enhanced soft purple glow for depth */
@@ -412,6 +421,49 @@ a:hover {
     right: 0;
     bottom: 0;
 }
+
+/* Overall Gallery Container */
+.photo-gallery-container {
+    padding-top: 20px; /* Adjust this as needed */
+}
+
+/* Individual Image Container within the Gallery */
+.item {
+    padding: 10px; /* Adds padding around each image for spacing */
+    border-radius: 4px; /* Optional: rounds the corners of the image containers */
+    margin-bottom: 20px; /* Adjusts the spacing between rows of images */
+}
+
+/* Image Tag Styling */
+.item img {
+    width: 100%; /* Ensures the image fills the container width */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom space/gap */
+    border-radius: 4px; /* Optional: to round the corners of the images themselves */
+}
+
+/* Responsive Grid adjustments for better spacing and alignment */
+@media (min-width: 576px) {
+    .item {
+        flex: 0 0 50%; /* Adjusts items to take half the width on smaller screens */
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .item {
+        flex: 0 0 33.333333%; /* Adjusts items to take one-third the width on medium screens */
+        max-width: 33.333333%;
+    }
+}
+
+@media (min-width: 992px) {
+    .item {
+        flex: 0 0 25%; /* Adjusts items to take one-fourth the width on large screens */
+        max-width: 25%;
+    }
+}
+
 
 .dl-page h2{
     font-size: 1rem !important;
