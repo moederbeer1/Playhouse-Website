@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Download Past Seasons | Playhouse SMP</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="mycss.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="dl-page">
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container navbar-container">
+            <a class="navbar-brand" href="index.html">
+                <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dynmap.html">World Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            More Info
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="downloads.html">Download Past Seasons</a>
+                            <a class="dropdown-item" href="photos.html">Our Photos</a>
+                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
+                            <a class="dropdown-item" href="members.html">Meet The Staff</a>
+                            <a class="dropdown-item " href="who.html">Who Are We</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content Area -->
+    <div class="container dl-522">
+        <h1 class="text-center styled-heading">Download Past Seasons</h1>
+        <h2 class="text-center styled-heading">Downloads may take a few seconds to start</h1>
+        <div class="row" id="seasonsContainer"></div>
+    </div>
+
+    <script src="seasons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="jquery-background-slideshow.js"></script>
+    <!-- Custom Script -->
+    <script>
+        $(document).ready(() => {
+          const shuffle = (array) => {
+            let currentIndex = array.length, randomIndex;
+      
+            while (currentIndex !== 0) {
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex--;
+      
+              [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+      
+            return array;
+          };
+      
+          const images = Array.from({ length: 82 }, (_, i) => `pics/background/${i + 1}.jpg`);
+          shuffle(images);
+      
+          $("body").backgroundSlideshow({
+            onBeforeTransition: (index) => console.log("before transition", index),
+            onAfterTransition: (index) => console.log("after transition", index),
+            transitionDuration: 3000,
+            fixed: true,
+            images
+          });
+        });
+      </script>
+</body>
+</html>
