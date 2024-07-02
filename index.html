@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Version 1.0 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Join Playhouse SMP - A community-driven Minecraft server for adults. Play, build, and explore together.">
@@ -62,12 +63,20 @@
                     <h1 class="display-4 text-center mt-5">Welcome to Playhouse SMP</h1>
                 <!-- Player Count Displays -->
                 <div class="text-center">
-                    <p class="lead server-status">Current players on the <strong>Main Server</strong>: 
-                        <span data-playercounter-ip="minecraft.playhousesmp.com" data-playercounter-format="{online}/{max}"></span>
-                    </p>
-                    <p class="lead server-status">Current players on the <strong>Event Server</strong>: 
-                        <span data-playercounter-ip="170.205.24.248:25594" data-playercounter-format="{online}/{max}"></span>
-                    </p>
+
+                <!-- Main Server -->
+                <p class="lead server-status">Current players on the <strong>Main Server</strong>: 
+                    <span id="playerCount1" data-playercounter-ip="minecraft.playhousesmp.com" data-playercounter-format="{online}/{max}">0/50</span>
+                </p>
+
+                <!-- Event Server (uncomment if needed) -->
+                <!--
+                <p class="lead server-status">Current players on the <strong>Event Server</strong>: 
+                    <span id="playerCount2" data-playercounter-ip="170.205.24.248:25594" data-playercounter-format="{online}/{max}">0/10</span>
+                </p>
+                -->
+
+
                 </div>
 
                 </div>
@@ -89,20 +98,20 @@
     <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            MCPlayerCounter.init({
+            new MCPlayerCounter({
                 element: document.getElementById('playerCount1'),
                 ip: 'minecraft.playhousesmp.com',
                 format: '{online}/{max}' // Adjust as necessary
             });
-            MCPlayerCounter.init({
-                element: document.getElementById('playerCount2'),
-                ip: '170.205.24.248:25594',
-                format: '{online}/{max}' // Adjust as necessary
-            });
+            
+            // Uncomment if you are using the Event Server counter
+            // new MCPlayerCounter({
+            //     element: document.getElementById('playerCount2'),
+            //     ip: '170.205.24.248:25594',
+            //     format: '{online}/{max}' // Adjust as necessary
+            // });
         });
     </script>
-
-
 
     <!-- Full jQuery Library -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -127,7 +136,7 @@
             return array;
           };
       
-          const images = Array.from({ length: 82 }, (_, i) => `pics/background/${i + 1}.jpg`);
+          const images = Array.from({ length: 87 }, (_, i) => `pics/background/${i + 1}.jpg`);
           shuffle(images);
       
           $("body").backgroundSlideshow({

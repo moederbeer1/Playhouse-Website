@@ -16,18 +16,33 @@ const seasons = [
     },
     {
         title: "Season 4",
-        description: "Download the adventures from our fourth season. Note: Season 5 is currently ongoing.",
+        description: "Download the adventures from our fourth season",
         thumbnail: "pics/season/s4.jpg",
-        downloadLink: "Downloads/Playhouse_SMP_S4.zip",
+        downloadLink: "https://drive.google.com/uc?export=download&id=18ljToQ5u3T1MbcUr0LVyZ94lZRYBfhaN",
         size: "2.76 GB"
     },
     {
         title: "Skyblock Modded",
         description: "We use a modded skyblock called Infinite Skyblock. Take on the unique challenges of this customized skyblock adventure.",
         thumbnail: "pics/season/skyblock.png",
-        downloadLink: "Downloads/Playhouse_Skyblock.zip",
+        downloadLink: "https://drive.google.com/uc?export=download&id=19VpWrNW_q7rvAmt90LPc32D7_ecokCtt",
         size: "186 MB"
+    },
+    {
+        title: "Season 5",
+        description: "Relive the epic adventures and unforgettable moments from our fifth season. Thanks to everyone who joined us for this incredible journey!",
+        thumbnail: "pics/season/s5.jpg", // Ensure you have this image in the correct path
+        downloadLink: "https://drive.google.com/uc?export=download&id=1AKQ8KpjEZZ_ZBt6b9kb5yQbtBaKV28vW", // Correct download link
+        size: "2.52 GB" // Correct size
+    },
+    {
+        title: "Create Mod World",
+        description: "Dive into the creative and mechanical wonders of the Create Mod. Experience a unique world filled with endless possibilities and engineering marvels.",
+        thumbnail: "pics/season/create_mod.png", // Ensure you have this image in the correct path
+        downloadLink: "https://drive.google.com/uc?export=download&id=1BWz5KglqcO-7zv1y-pxY2WZGM7eVjfz0", // Correct download link
+        size: "1.22 GB" // Correct size
     }
+    
 ];
 
 function renderSeasons() {
