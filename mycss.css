@@ -1,487 +1,1145 @@
-/* Base Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-    background-color: #4c2c58;
+/* =========================================
+   PLAYHOUSE SMP THEME - BEST PRACTICES
+   ========================================= */
+:root {
+    --color-bg: #0f0a1e;
+    --color-accent: #e0a736; /* Anzac/Gold from logo */
+    --color-logo-purple: #312783; /* Logo purple - for buttons/accents */
+    --color-navbar: #1e1538; /* Dark purple - navbar */
+    --color-container: #2a1f47; /* Slightly lighter - containers/cards */
+    --color-text: #ffffff;
+    --color-card-bg: rgba(42, 31, 71, 0.85); /* Container purple with transparency */
+}
+
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 140px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    background: #0f0a1e;
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Downloads page offset for fixed navbar */
+.dl-page {
+    padding-top: 190px !important;
+}
+
+/* Subtle animated background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 30%, rgba(42, 31, 71, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(224, 167, 54, 0.08) 0%, transparent 50%);
+    animation: gradientShift 20s ease infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes gradientShift {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+/* =========================================
+   PARTICLE ANIMATION STYLES
+   ========================================= */
+.particle-overlay {
+    position: absolute !important; /* Changed from fixed to absolute */
+    top: 0;
+    left: 0;
     width: 100%;
-    padding-top: 180px; /* Adjust this value based on the actual height of your navbar + 20px */
-    background-size: cover;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2 !important; /* Above hero overlay (z-index: 1), below content (z-index: 2+) */
+    overflow: hidden;
 }
 
-/* Navigation Bar Styles */
+/* Particle float animation with GRADUAL fade-in */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    85% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-90vh) translateX(50px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Better fade-in animation - gradual from bottom, visible longer */
+@keyframes floatUpFade {
+    0% {
+        transform: translateY(0) translateX(0) scale(0.3);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.1;
+    }
+    10% {
+        transform: translateY(-10vh) translateX(3px) scale(0.5);
+        opacity: 0.2;
+    }
+    20% {
+        transform: translateY(-20vh) translateX(8px) scale(0.8);
+        opacity: 0.5;
+    }
+    30% {
+        transform: translateY(-30vh) translateX(15px) scale(1);
+        opacity: 0.85;
+    }
+    75% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(50px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   NAVBAR - BEST PRACTICES
+   ========================================= */
 .navbar {
-    background-color: #4c2c58; /* Semi-transparent background */
-    border-bottom: 3px solid #f0ad4e; /* Purple border from your logo */
-    margin-bottom: 0; /* Remove default margin if any */
-    width: 100%; /* Ensure it spans the full width of the viewport */
-    z-index: 1030; /* High z-index to keep it above other content */
-    padding: 0rem 0rem;
+    background: linear-gradient(180deg, #1e1538 0%, #1a1230 100%);
+    backdrop-filter: blur(20px);
+    border-bottom: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    z-index: 9999 !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0.75rem 0;
 }
 
-.navbar .navbar-brand {
-    padding: 0.25rem 1rem; /* Adequate padding for the logo */
-    height: auto; /* Adjust based on your logo's size */
-}
-
+/* Improve navbar text readability */
 .navbar .navbar-nav .nav-link {
-    color: #fff; /* White color for the links */
-    padding: 0.5rem 1rem; /* Padding for clickable area */
+    color: #e0a736;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
 }
 
-.navbar-brand img {
-    width: 220px; /* Increase the width from 180px */
-    height: auto; /* Maintain aspect ratio */
-}
-
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link:focus {
-    color: #f0ad4e; /* Highlight color when hovered or focused */
+.navbar .navbar-nav .nav-link:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
 }
 
 .navbar-container {
-    background: transparent !important; /* Semi-transparent white background */
-    border: 0px !important; /* Light purple border */
-    box-shadow: 0 0px 0px rgba(243, 195, 37, 0.3) !important; /* Soft purple glow for depth */
-    padding: 10px !important;
+    position: relative;
+    z-index: 1000;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
 }
 
-/* Dropdown Menu Enhancements */
+/* Ensure dropdowns appear above navbar container */
 .navbar .dropdown-menu {
-    background: rgba(37, 37, 37, 0.9); /* Dark background for dropdown */
-    border: none; /* Removes default border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds subtle shadow for depth */
-    margin-top: .5rem; /* Provides space between the navbar and dropdown */
+    z-index: 1050 !important;
+}
+
+.navbar-collapse {
+    z-index: 9999;
+    position: relative;
+}
+
+.navbar-nav {
+    z-index: 9999;
+    position: relative;
+    align-items: center;
+}
+
+.navbar.scrolled {
+    background: rgba(30, 21, 56, 0.98);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    max-height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    padding: 5px 0;
+    filter: drop-shadow(0 0 10px rgba(224, 167, 54, 0.4));
+    transition: all 0.3s ease;
+}
+
+/* Navbar link enhancements */
+.navbar .navbar-nav .nav-link {
+    color: #f5f5f5;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #e0a736;
+    text-shadow: 0 0 10px rgba(224, 167, 54, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Ensure dropdowns display properly */
+.navbar,
+.navbar-container {
+    overflow: visible !important;
+}
+
+.navbar .dropdown-menu {
+    position: absolute !important;
+    z-index: 2000 !important;
+}
+
+.navbar-brand img:hover {
+    filter: drop-shadow(0 0 15px rgba(224, 167, 54, 0.6));
+    transform: scale(1.03);
+}
+
+/* Regular nav links */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-nav .dropdown .nav-link.dropdown-toggle,
+.navbar .dropdown-menu .dropdown-item {
+    color: #e0a736 !important;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .dropdown .nav-link.dropdown-toggle:hover,
+.navbar .dropdown-menu .dropdown-item:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
+}
+
+.navbar .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #e0a736;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar .navbar-nav .nav-link:hover::after {
+    width: 70%;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #e0a736;
+}
+
+/* BEST PRACTICE: Dropdown with chevron icon */
+.navbar .navbar-nav .dropdown .nav-link.dropdown-toggle {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    padding-right: 2rem; /* Space for chevron */
+    position: relative;
+    transition: all 0.3s ease;
+    text-shadow: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Hide Bootstrap's default caret */
+.navbar .navbar-nav .dropdown .nav-link.dropdown-toggle::after {
+    display: none;
+}
+
+/* Custom chevron icon using CSS */
+.navbar .navbar-nav .dropdown .nav-link.dropdown-toggle::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.3rem;
+    vertical-align: middle;
+    border-top: 5px solid currentColor;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate chevron when dropdown is open */
+.navbar .navbar-nav .dropdown.show .nav-link.dropdown-toggle::before {
+    transform: rotate(180deg);
+}
+
+.navbar .navbar-nav .dropdown .nav-link.dropdown-toggle:hover {
+    color: #e0a736;
+}
+
+/* Hover underline for dropdown toggle */
+.navbar .navbar-nav .dropdown .nav-link.dropdown-toggle:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 70%;
+    height: 2px;
+    background: #e0a736;
+    transform: translateX(-50%);
+}
+
+/* DROPDOWN MENU - Best Practices */
+.navbar .dropdown-menu {
+    background: rgba(30, 21, 56, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(224, 167, 54, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 200px;
 }
 
 .navbar .dropdown-menu .dropdown-item {
-    color: #f0ad4e; /* Gold color for items */
-    padding: 10px 20px; /* Adequate padding for larger click areas */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    color: #e0a736;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.navbar .dropdown-menu .dropdown-item:hover, 
-.navbar .dropdown-menu .dropdown-item:focus {
-    background-color: #7B1FA2; /* Purple background on hover/focus */
-    color: #ffffff; /* White text on hover/focus */
-}
-
+/* Icon spacing in dropdown items */
 .navbar .dropdown-menu .dropdown-item i {
-    margin-right: 8px; /* Space between icon and text */
+    width: 20px;
+    text-align: center;
 }
 
-/* Ensuring responsiveness */
-@media (max-width: 992px) {
+.navbar .dropdown-menu .dropdown-item:hover {
+    background: rgba(42, 31, 71, 0.5);
+    color: #ffffff;
+    padding-left: 25px;
+}
+
+.navbar .dropdown-menu .dropdown-item:active {
+    background: rgba(42, 31, 71, 0.7);
+}
+
+/* Mobile navbar - Best Practices */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(30, 21, 56, 0.98);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+        border: 1px solid rgba(224, 167, 54, 0.2);
+    }
+    
+    .navbar .navbar-nav .nav-link::after {
+        bottom: 0;
+    }
+    
     .navbar .dropdown-menu {
-        position: static; /* Overrides position for mobile */
-        float: none; /* Ensures dropdown expands full width */
-        width: auto; /* Auto width based on content size */
+        border: none;
+        background: rgba(42, 31, 71, 0.3);
+        margin-top: 0.5rem;
+    }
+    
+    .navbar .navbar-nav .dropdown .nav-link.dropdown-toggle::before {
+        position: absolute;
+        right: 1rem;
     }
 }
 
-/* Main Content Styling */
+/* CONTAINER */
 .container {
-    padding: 20px;
-    backdrop-filter: blur(10px); /* Blur effect for the background */
-    background: rgba(24, 24, 24, 0.33); /* Semi-transparent white background */
-    border-radius: 8px; /* Rounded corners for aesthetics */
-    border: .01px solid #f0ad4e; /* Light purple border */
-    box-shadow: 0 8px 16px rgba(240, 173, 78, 0.72)    ; /* Enhanced soft purple glow for depth */
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    background: var(--color-card-bg);
+    border-radius: 20px;
+    border: 1px solid rgba(224, 167, 54, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TYPOGRAPHY */
 h1, h2 {
     text-align: center;
-    font-weight: bold;
-    -webkit-text-stroke: 0.3px black; /* Very fine black outline to keep the text legible without overwhelming */
-    text-shadow: 14px 14px 18px rgba(0, 0, 0, 0.726) !important; /* Subtle black shadow to enhance readability */
+    font-weight: 700;
+    color: #FFB84D;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    text-shadow: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
 }
 
 p {
-    font-size: 1.2rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.8;
     text-align: center;
 }
 
-/* Button Styles */
+/* BUTTONS - Best Practices */
 button, .btn {
-    background-color: #f0ad4e; /* Eye-catching button color */
-    color: #7B1FA2;
+    background: linear-gradient(135deg, #e0a736 0%, #c08f2d 100%);
+    color: #0f0a1e;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 30px;
     margin: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(224, 167, 54, 0.3);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 button:hover, .btn:hover {
-    background-color: #7B1FA2; /* Light color for hover */
-    color: #f0ad4e; /* Ensure text color changes for visibility */
-    transform: scale(1.05); /* More subtle scaling */
+    background: linear-gradient(135deg, #312783 0%, #4a3599 100%);
+    color: #e0a736;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(49, 39, 131, 0.4);
 }
 
-
-/* Server Status Styling */
-.server-status {
-    font-size: 1.7rem; /* Adjusted font size for better visibility */
-    padding: 10px; /* Padding for better spacing around the text */
-    border-radius: 8px; /* Rounded corners for a softer, modern look */
-    margin-bottom: 10px; /* Adds space between consecutive elements */
-    color: #FFF; /* Maintains white color for high contrast */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Subtle black shadow to enhance readability */
-    -webkit-text-stroke: 0.1px black; /* Very fine black outline to keep the text legible without overwhelming */
-    text-shadow: 1px 14px 18px rgba(0, 0, 0, 0.726) !important; /* Subtle black shadow to enhance readability */
+button:active, .btn:active {
+    transform: translateY(0);
 }
 
-
-
-.server-status strong {
-    color: #f0ad4e; /* Highlight server names with a gold color */
+.btn-primary {
+    background: linear-gradient(135deg, #312783 0%, #4a3599 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(49, 39, 131, 0.3);
 }
 
-/* Enhanced hover effects for links (if applicable) */
-a:hover {
-    text-decoration: underline; /* Underline links on hover for better interactivity */
+.btn-primary:hover {
+    background: linear-gradient(135deg, #e0a736 0%, #c08f2d 100%);
+    color: #0f0a1e;
+    box-shadow: 0 6px 20px rgba(224, 167, 54, 0.4);
 }
 
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 1.6rem; /* Smaller font size for mobile */
-    }
-
-    .navbar-nav .nav-link {
-        padding: 0.5rem 1rem; /* Adequate padding for touch targets */
-    }
-
-    .btn-primary, .btn-success {
-        padding: 0.6rem 1rem; /* Suitable for mobile */
-        font-size: 0.9rem; /* Larger font for readability on mobile */
-    }
+.btn-success {
+    background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+    color: white;
 }
 
-/* Downloads.html Styles */
+.btn-success:hover {
+    background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
 
+/* CARDS - Best Practices */
 .card {
-    box-shadow: 0 8px 16px rgba(128, 0, 128, 0.45); /* Enhanced soft purple glow for depth */
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Ensure card uses all available vertical space */
-    border: 2px solid #f0ad4e; /* Gold border */
+    background: var(--color-card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(224, 167, 54, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    height: 100%;
 }
-
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(211, 198, 23, 0.45); /* Enhanced soft purple glow for depth */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(49, 39, 131, 0.4);
+    border-color: rgba(224, 167, 54, 0.4);
+    background: linear-gradient(135deg, rgba(42, 31, 71, 0.9) 0%, rgba(49, 39, 131, 0.85) 100%);
 }
 
 .card-img-top {
-    width: 100%; /* Ensures the image covers the card width */
-    height: 180px; /* Fixed height for all images */
-    object-fit: cover; /* Ensures images cover the area without stretching */
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.08);
 }
 
 .card-body {
-    flex: 1;  /* Flex-grow to use available space */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    background-color: rgba(37, 5, 56, 0.5); /* Semi-transparent background for the text area */
-    color: #fff; /* White text */
-    height: auto; /* Flexibility in height */
-}
-
-.card-body p {
-    text-align: center; /* Ensures text is centered */
-}
-
-.btn-dl {
-    background-color: #f0ad4e !important;
-    border-color: #7B1FA2 !important;
-    margin-top: auto; /* Pushes the button to the bottom of the card */
-}
-
-.btn-dl:hover {
-    background-color: #7B1FA2 !important;
-    border-color: #f0ad4e !important;
-}
-
-.styled-title {
-    font-size: 30px;
-    font-weight: bold;
-    color: #f0ad4e;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* subtle shadow-based outline */
-}
-    
-.styled-desc {
-    color: #fff;
-    text-shadow: -0.5px -0.5px 0 rgba(0, 0, 0, 0.5), 0.5px -0.5px 0 rgba(0, 0, 0, 0.5), -0.5px 0.5px 0 rgba(0, 0, 0, 0.5), 0.5px 0.5px 0 rgba(0, 0, 0, 0.5);
-}
-
-/* Specific class for the heading to ensure style specificity and use of !important to enforce styles */
-.styled-heading {
-    text-align: center;
-    font-weight: bold;
-    color: #ffffff !important; /* Ensuring text color is always white */
-    text-shadow: -0.5px -0.5px 0 #000, 0.5px 0.5px 0 #000 !important; /* Subtle shadow-based outline with higher specificity */
-    -webkit-text-stroke: 0px black;
-    padding-bottom: 10px;
-}
-
-.inside-container {
-    border: 0px solid #f0ad4e !important; /* Light purple border */
-} 
-
-
-.home-page .inside-container {
-    background-color: rgba(63, 49, 73, 0.72) !important;
-}
-
-.dl-552 {
-    margin-top: -5px !important;
-}
-
-.dynmap-page {
-    height: 100%; /* Ensure the full height is used */
-    margin: 0; /* Reset any default margin */
-}
-
-.who-background .inside-container {
-    background-color: rgba(63, 49, 73, 0.72) !important;
-}
-.dynmap-page iframe {
-    position: absolute;
-    top: 86px; /* Adjust this value if the navbar's actual height is different */
-    left: 0;
-    width: 100%; /* Full width */
-    height: calc(100% - 71px); /* Adjust this as well to match the top value */
-    border: 0; /* No border */
-}
-
-.who-background strong {
-    font-weight: bold;
-    color: #f0ad4e;
-}
-
-.who-background h2, .staff-background h2, .photo-gallery-background h2{
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: #ffffff !important; /* Ensuring text color is always white */
-    text-shadow: -0.5px -0.5px 0 #000, 0.5px 0.5px 0 #000 !important; /* Subtle shadow-based outline with higher specificity */
-    -webkit-text-stroke: 0px black;
-    padding-bottom: 10px;
-}
-
-.staff-background .card {
-    background-color: rgba(255, 255, 255, 0.9); /* Light background for the cards */
-    color: #4c2c58; /* Dark text for readability */
-    border: 2px solid #f0ad4e; /* Consistent gold border */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for hover effects */
-}
-
-.staff-background .card:hover {
-    transform: translateY(-5px); /* Lift card on hover */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-.staff-background .card-body {
-    padding: 20px; /* More padding for better spacing */
-}
-
-.staff-background .mcicon {
-    width: 120px; /* Larger icons */
-    height: 120px; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circle shape */
-    margin-bottom: 15px; /* Space below the icon */
-}
-
-.staff-background .card-title {
-    font-size: 24px; /* Larger title */
-    color: #f0ad4e; /* Darker color for title */
-}
-
-.staff-background .card-text {
-    font-size: 18px; /* Slightly larger text */
-}
-
-.staff-background h2.styled-heading {
-    color: #f0ad4e; /* Gold color to match your theme */
-    margin-bottom: 50px; /* More space above the first card row */
-}
-.staff-background .row > [class*='col-'] {
-    padding: 15px; /* This ensures padding around each card is uniform */
-}
-
-/* Responsive adjustments for better alignment */
-@media (max-width: 992px) {
-    .staff-background .col-md-4 {
-        margin-bottom: 30px; /* Space between cards on smaller screens */
-    }
-}
-
-/* Photos Page Specific Styles */
-.photo-gallery-background {
-    height: auto;
-    overflow-y: auto;
+    padding: 20px;
+    background: rgba(15, 10, 30, 0.8);
     position: relative;
-    background: rgba(63, 49, 73, 0.72) !important; /* Semi-transparent white background */
+    z-index: 1;
+}
+
+/* SERVER STATUS */
+.server-status {
+    font-size: 1.3rem;
+    padding: 20px 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #2a1f47 0%, #312783 100%);
+    backdrop-filter: blur(10px);
+    border: 2px solid #e0a736;
+    box-shadow: 0 8px 32px rgba(224, 167, 54, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.server-status strong {
+    color: #e0a736;
+}
+
+.server-status .fas {
+    color: #e0a736;
+    display: flex;
+    align-items: center;
+}
+
+.server-status span {
+    display: flex;
+    align-items: center;
+}
+
+/* HERO SECTION */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .background-slideshow {
-    position: fixed;  
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;  
-    overflow: hidden;
-    filter: blur(16px);  
-}
-
-.image-border {
-    border: 1.2px solid #f0ad4e; /* Purple border from your logo */
-    box-shadow: 0 12px 32px rgba(128, 0, 128, 0.45); /* Enhanced soft purple glow for depth */
-}
-
-.photo-gallery-background .photo-gallery-container {
-    padding-top: 56px; /* Ensure space for the fixed navbar */
-}
-
-.photo-gallery-background .thumb {
-    margin-bottom: 30px; /* Space between the thumbnails */
-}
-
-.photo-gallery-background .styled-heading {
-    text-align: center;
-    font-weight: bold;
-    color: #ffffff !important;
-    text-shadow: -0.5px -0.5px 0 #000, 0.5px 0.5px 0 #000 !important;
-    -webkit-text-stroke: 0px black;
-    padding-bottom: 10px;
-}
-
-.photo-gallery-background .portfolio-menu ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.photo-gallery-background .portfolio-menu ul li {
-    cursor: pointer;
-    margin: 0 10px;
-    padding: 10px 15px;
-    border: 2px solid #fff;
-    color: #fff;
-    background-color: transparent;
-    transition: all 0.3s ease;
-}
-
-.photo-gallery-background .portfolio-menu ul li.active,
-.photo-gallery-background .portfolio-menu ul li:hover {
-    background-color: #7B1FA2;
-    border-color: #7B1FA2;
-    color: #fff;
-}
-
-.photo-gallery-background .thumb .zoom {
-    transition: all 0.3s ease;
-}
-
-.photo-gallery-background .thumb .zoom:hover {
-    transform: scale(1.1);
-}
-
-.photo-gallery-background .background-slideshow-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.photo-gallery-background .background-slideshow {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: blur(15px);
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
-/* Overall Gallery Container */
-.photo-gallery-container {
-    padding-top: 20px; /* Adjust this as needed */
+.hero-content {
+    animation: heroFadeIn 1s ease;
+    position: relative;
+    z-index: 2;
 }
 
-/* Individual Image Container within the Gallery */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 140%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.8) 40%,
+        rgba(0, 0, 0, 0.6) 70%,
+        rgba(0, 0, 0, 0.4) 90%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+}
+
+/* Improve hero text readability */
+.hero-content h1 {
+    color: #fdfdfd;
+    font-family: 'Quicksand', 'Nunito Sans', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 1)) !important;
+    z-index: 3;
+}
+
+/* Glowing Playhouse SMP text */
+.hero-content h1 span {
+    background: linear-gradient(135deg, #e0a736 0%, #ffefb0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 1)) !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+/* Refined tagline styling */
+.hero-content p {
+    color: #ffffff;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    z-index: 3;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 1)) !important;
+}
+
+/* Ensure tagline with inline styles also gets shadow */
+.hero-content p.lead {
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 1), 0 0 60px rgba(0, 0, 0, 0.95) !important;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 1)) !important;
+}
+
+/* Apply drop shadow to all hero overlay elements */
+.hero-content * {
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.9));
+}
+
+/* PHOTO GALLERY */
 .item {
-    padding: 10px; /* Adds padding around each image for spacing */
-    border-radius: 4px; /* Optional: rounds the corners of the image containers */
-    margin-bottom: 20px; /* Adjusts the spacing between rows of images */
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
 
-/* Image Tag Styling */
 .item img {
-    width: 100%; /* Ensures the image fills the container width */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Removes bottom space/gap */
-    border-radius: 4px; /* Optional: to round the corners of the images themselves */
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgba(224, 167, 54, 0.2);
+    transition: all 0.4s ease;
 }
 
-/* Responsive Grid adjustments for better spacing and alignment */
-@media (min-width: 576px) {
-    .item {
-        flex: 0 0 50%; /* Adjusts items to take half the width on smaller screens */
-        max-width: 50%;
-    }
+.item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(224, 167, 54, 0.3);
+    border-color: #e0a736;
 }
 
-@media (min-width: 768px) {
-    .item {
-        flex: 0 0 33.333333%; /* Adjusts items to take one-third the width on medium screens */
-        max-width: 33.333333%;
-    }
-
+/* STAFF PAGE */
+.staff-background .card {
+    background: var(--color-card-bg);
+    color: #ffffff;
+    border: 1px solid rgba(224, 167, 54, 0.2);
 }
 
-.team-last1 {
-    margin-left: 33.33333%;
+.staff-background .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(42, 31, 71, 0.4);
 }
+
+.staff-background .mcicon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #e0a736;
+    box-shadow: 0 0 20px rgba(224, 167, 54, 0.4);
+    transition: all 0.3s ease;
+}
+
+.staff-background .card:hover .mcicon {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(224, 167, 54, 0.6);
+}
+
+.staff-background .card-title {
+    font-size: 24px;
+    color: #e0a736;
+}
+
+/* SCROLL ANIMATIONS */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE - Best Practices */
 @media (max-width: 768px) {
-    .team-last1 {
-        margin-left: 0% !important;
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    
+    .navbar-brand img {
+        width: 180px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .server-status {
+        padding: 15px 25px;
+        font-size: 1.1rem;
     }
 }
 
-
-
-@media (min-width: 992px) {
-    .item {
-        flex: 0 0 25%; /* Adjusts items to take one-fourth the width on large screens */
-        max-width: 25%;
-    }
+/* CUSTOM SCROLLBAR - Best Practices */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
+::-webkit-scrollbar-track {
+    background: #0f0a1e;
+}
 
-.dl-page h2{
-    font-size: 1rem !important;
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #e0a736, #2a1f47);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #2a1f47, #e0a736);
+}
+
+/* SELECTION - Best Practices */
+::selection {
+    background: rgba(224, 167, 54, 0.4);
+    color: #ffffff;
+}
+
+/* ACCESSIBILITY - Best Practices */
+:focus {
+    outline: 2px solid #e0a736;
+    outline-offset: 2px;
+}
+
+button:focus, .btn:focus {
+    outline: 2px solid #e0a736;
+    outline-offset: 2px;
+}
+
+/* UTILITY CLASSES */
+.styled-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #e0a736;
+}
+
+.styled-desc {
+    color: #e0e0e0;
+}
+
+.styled-heading {
+    text-align: center;
+    font-weight: 800;
+    color: #FFB84D !important;
+    padding-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-shadow: none !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: #FFB84D !important;
+    background-clip: unset !important;
+    filter: none !important;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.text-light {
+    color: #e0e0e0 !important;
+}
+
+.lead {
+    color: #e0e0e0 !important;
+}
+
+ol, ul {
+    color: #e0e0e0 !important;
+}
+
+ol li, ul li {
+    color: #e0e0e0 !important;
+}
+
+.card-title {
+    color: #e0a736 !important;
+}
+
+.card-text {
+    color: #e0e0e0 !important;
 }
 
 .size-text {
-    font-size: 1rem; /* Smaller font size */
-    color: #3d3d3d; /* Light gray color for less prominence */
+    font-size: 0.95rem;
+    color: #a0a0a0;
+}
+
+.inside-container {
+    border: 0 !important;
+    background-color: rgba(42, 31, 71, 0.85) !important;
+    padding: 40px !important;
+    border-radius: 20px !important;
+}
+
+.home-page .inside-container,
+.who-background .inside-container {
+    background-color: rgba(42, 31, 71, 0.85) !important;
+    margin-top: 0px !important; /* Reduced to remove extra space */
+}
+
+/* Photos page alignment */
+.photos-background {
+    padding-top: 70px !important;
+}
+
+/* Fix double purple and spacing for About Us */
+.who-background {
+    background-color: rgba(15, 10, 30, 0.95) !important;
+    padding-top: 20px !important;
+}
+
+/* Remove double background inside About Us and Staff */
+.who-background .inside-container,
+.staff-background .inside-container {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Fix staff page overlap and card spacing */
+.staff-background {
+    padding-top: 50px !important;
+}
+
+.staff-background .card {
+    margin-bottom: 30px !important;
+}
+
+.who-background strong {
+    font-weight: bold;
+    color: #e0a736;
+}
+
+#seasonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#seasonsContainer .col-md-4 {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+}
+
+@media (max-width: 992px) {
+    #seasonsContainer .col-md-4 {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    #seasonsContainer .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   TABLET NAVBAR (768px-991px)
+   ========================================= */
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+    /* === NAVBAR === */
+    .navbar {
+        padding: 10px 15px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .navbar-container {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 !important;
+    }
+
+    .navbar-brand {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar-brand img {
+        max-height: 42px !important;
+        height: 42px !important;
+        width: auto !important;
+        display: block !important;
+    }
+
+    /* Hamburger button */
+    .navbar-toggler {
+        padding: 8px 10px !important;
+        border: 1px solid #FFB84D !important;
+        background: transparent !important;
+        margin: 0 !important;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:active,
+    .navbar-toggler:focus {
+        background: transparent !important;
+        border-color: #FFB84D !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Dropdown menu - centered with navbar background */
+    .navbar-collapse {
+        text-align: center !important;
+        background: rgba(26, 18, 52, 0.98) !important;
+        margin: 10px -15px 0 -15px !important;
+        padding: 15px 0 !important;
+        border-radius: 0 0 10px 10px !important;
+    }
+
+    .navbar-nav {
+        align-items: center !important;
+    }
+
+    .nav-item {
+        margin: 8px 0 !important;
+    }
+
+    .dropdown-menu {
+        background: rgba(20, 15, 40, 0.95) !important;
+        border: 1px solid rgba(255, 184, 77, 0.3) !important;
+        text-align: center !important;
+    }
+}
+
+/* =========================================
+   CONTAINER CENTERING (below 992px)
+   ========================================= */
+
+@media only screen and (max-width: 991px) {
+    /* === CONTAINER SPACING === */
+    .inside-container,
+    .dl-522,
+    .photo-gallery-container,
+    .staff-background .container,
+    .who-background .container {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: calc(100% - 30px) !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* === WHO PAGE LOGO === */
+    .who-background .col-lg-4 {
+        text-align: center !important;
+        margin-bottom: 30px !important;
+    }
+
+    .who-background .col-lg-4 img {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block !important;
+    }
+}
+
+/* =========================================
+   MOBILE OPTIMIZATIONS (768px and below)
+   ========================================= */
+
+@media only screen and (max-width: 768px) {
+    /* === NAVBAR === */
+    .navbar {
+        padding: 10px 15px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .navbar-container {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 0 !important;
+    }
+
+    .navbar-brand {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .navbar-brand img {
+        max-height: 42px !important;
+        height: 42px !important;
+        width: auto !important;
+        display: block !important;
+    }
+
+    /* Hamburger button */
+    .navbar-toggler {
+        padding: 8px 10px !important;
+        border: 1px solid #FFB84D !important;
+        background: transparent !important;
+        margin: 0 !important;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:active,
+    .navbar-toggler:focus {
+        background: transparent !important;
+        border-color: #FFB84D !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Dropdown menu - centered with navbar background */
+    .navbar-collapse {
+        text-align: center !important;
+        background: rgba(26, 18, 52, 0.98) !important;
+        margin: 10px -15px 0 -15px !important;
+        padding: 15px 0 !important;
+        border-radius: 0 0 10px 10px !important;
+    }
+
+    .navbar-nav {
+        align-items: center !important;
+    }
+
+    .nav-item {
+        margin: 8px 0 !important;
+    }
+
+    .dropdown-menu {
+        background: rgba(20, 15, 40, 0.95) !important;
+        border: 1px solid rgba(255, 184, 77, 0.3) !important;
+        text-align: center !important;
+    }
+
+    /* === TEXT SIZING === */
+    h1 { font-size: 1.75rem !important; }
+    h2 { font-size: 1.4rem !important; }
+    h3 { font-size: 1.2rem !important; }
+
+    /* === CONTAINER SPACING === */
+    .inside-container {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        width: calc(100% - 30px) !important;
+        padding: 25px 20px !important;
+    }
+
+    /* All page containers - centered with margins */
+    .dl-522,
+    .photo-gallery-container,
+    .staff-background .container,
+    .who-background .container {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        width: calc(100% - 30px) !important;
+    }
+
+    /* === FOOTER === */
+    footer {
+        padding: 30px 15px !important;
+    }
+
+    footer .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    footer p {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+
+    footer .mb-3 a {
+        font-size: 1.4rem !important;
+        margin: 0 12px !important;
+    }
 }

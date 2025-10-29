@@ -3,51 +3,86 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Meet The Staff | Playhouse SMP</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Staff | Playhouse SMP - Minecraft Server for Adults</title>
+    <meta name="title" content="Staff | Playhouse SMP - Minecraft Server for Adults">
+    <meta name="description" content="Meet the Playhouse SMP staff team. We run an adult-only Minecraft vanilla survival server with a strong, professional community since 2020. Mature gaming environment for adult players.">
+    <meta name="keywords" content="minecraft staff, minecraft smp staff, playhouse smp staff, adult minecraft server, minecraft server for adults, adult only minecraft, mature minecraft community, minecraft moderators, minecraft admins, adult gaming staff">
+    <meta name="author" content="Playhouse SMP">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://playhousesmp.com/members.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://playhousesmp.com/members.html">
+    <meta property="og:title" content="Playhouse SMP Staff | Adult-Only Minecraft Server Team">
+    <meta property="og:description" content="Get to know the staff running our adult-only Minecraft vanilla survival community. Professional, mature environment. Active since 2020.">
+    <meta property="og:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://playhousesmp.com/members.html">
+    <meta name="twitter:title" content="Playhouse SMP Staff | Adult Minecraft Server">
+    <meta name="twitter:description" content="Meet the staff behind Playhouse SMP — an adult-only vanilla survival server. Mature, professional community.">
+    <meta name="twitter:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+
+    <!-- Random Background Preload Selection -->
+    <script>
+        const bg1 = Math.floor(Math.random() * 50) + 1;
+        const bg2 = Math.floor(Math.random() * 50) + 1;
+        window.preloadedBackgrounds = [`pics/background/${bg1}.jpg`, `pics/background/${bg2}.jpg`];
+        document.write(`<link rel="preload" href="pics/background/${bg1}.jpg" as="image" type="image/jpeg">`);
+        document.write(`<link rel="preload" href="pics/background/${bg2}.jpg" as="image" type="image/jpeg">`);
+    </script>
+
+    <!-- Preload Critical Images for Performance -->
+    <link rel="preload" href="pics/playhouselogo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="pics/playhousesmp.png" as="image" type="image/png">
+
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles -->
     <link href="mycss.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
   <body class="staff-background">
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container navbar-container">
-        <a class="navbar-brand" href="index.html">
-          <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dynmap.html">World Map</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> More Info </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="downloads.html">Download Past Seasons</a>
-                <a class="dropdown-item" href="photos.html">Our Photos</a>
-                <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
-                <a class="dropdown-item" href="members.html">Meet The Staff</a>
-                <a class="dropdown-item" href="who.html">Who Are We</a>
-              </div>
-            </li>
-          </ul>
+        <div class="container navbar-container">
+            <a class="navbar-brand" href="index.html">
+                <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Why Us?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#join">Join Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="photos.html"><i class="fas fa-images"></i> Photos</a>
+                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft" target="_blank" rel="noopener noreferrer"><i class="fas fa-heart"></i> Patreon</a>
+                            <a class="dropdown-item" href="members.html"><i class="fas fa-users"></i> Staff</a>
+                            <a class="dropdown-item" href="who.html"><i class="fas fa-info-circle"></i> About Us</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
+
+
     <!-- Main Content Area -->
-    <div class="container mt-5 pt-5">
+<div class="container mt-5 pt-5 mb-5 pb-5">
       <h2 class="text-center mb-4 styled-heading">Meet The Staff</h2>
-      <div class="row">
+<div class="row d-flex flex-wrap justify-content-center">
         <!-- div class="col-xs-12 col-sm-6 col-md-4" style="margin-left: 16%;" [][][][][][][][] THIS IS FOR 2 PEOPLE AT THE BOTTOM [][][][][][][][][][][][]-->
         <!-- Team member -->
         <div class="col-xs-12 col-sm-6 col-md-4">
@@ -98,25 +133,6 @@
                       <img class="mcicon" src="https://crafatar.com/avatars/6f480562-cf8e-4d7b-bca5-cc93a331bd17" alt="Beltari">
                     </p>
                     <h4 class="card-title">Beltari</h4>
-                    <p class="card-text">Moderator</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- ./Team member -->
-        <!-- Team member -->
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-            <div class="mainflip">
-              <div class="frontside">
-                <div class="card">
-                  <div class="card-body text-center">
-                    <p>
-                      <img class="mcicon" src="https://crafatar.com/avatars/45ea78a4-f7aa-4a86-adc9-65f455fd35c0" alt="EnjoixBE4R">
-                    </p>
-                    <h4 class="card-title">EnjoixBE4R</h4>
                     <p class="card-text">Moderator</p>
                   </div>
                 </div>
@@ -221,14 +237,14 @@
         </div>
         <!-- ./Team member -->
         <!-- Team member -->
-        <div class="col-xs-12 col-sm-6 col-md-4 team-last1">
+<div class="col-xs-12 col-sm-6 col-md-4">
           <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
             <div class="mainflip">
               <div class="frontside">
                 <div class="card">
                   <div class="card-body text-center">
                     <p>
-                      <img class="mcicon" src="https://crafatar.com/avatars/713b4d27-c1a4-4366-9e9f-7fe986499179" alt="PJs">
+                      <img class="mcicon" src="https://mc-heads.net/avatar/713b4d27-c1a4-4366-9e9f-7fe986499179" alt="PJs" onerror="this.src='https://minotar.net/avatar/713b4d27-c1a4-4366-9e9f-7fe986499179'">
                     </p>
                     <h4 class="card-title">PJs</h4>
                     <p class="card-text boldcard">Web Designer</p>
@@ -241,36 +257,25 @@
         <!-- ./Team member -->
       </div>
     </div>
+    <!-- Footer -->
+    <footer class="py-4" style="background: rgba(15, 10, 30, 0.8); border-top: 1px solid rgba(255, 184, 77, 0.2); margin-top: 15px;">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://discord.gg/Tz9G9s6tqU" target="_blank" rel="noopener noreferrer" style="color: #FFB84D; margin: 0 10px; font-size: 1.5rem;" title="Apply via Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://www.patreon.com/playhouseminecraft" target="_blank" rel="noopener noreferrer" style="color: #FFB84D; margin: 0 10px; font-size: 1.5rem;" title="Support us on Patreon"><i class="fab fa-patreon"></i></a>
+            </div>
+            <p style="color: #a0a0a0; margin: 0;">&copy; 2025 Playhouse SMP. Built with ❤️ by our community.</p>
+            <p style="color: #808080; font-size: 0.9rem; margin-top: 10px;">
+                <a href="who.html" style="color: #808080;">About</a> &bull;
+                <a href="members.html" style="color: #808080;">Staff</a> &bull;
+                <a href="photos.html" style="color: #808080;">Gallery</a>
+            </p>
+        </div>
+    </footer>
+
     <!-- Bootstrap and jQuery Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="jquery-background-slideshow.js"></script>
-    <!-- Custom Script for random background slideshow -->
-    <script>
-      $(document).ready(() => {
-        const shuffle = (array) => {
-          let currentIndex = array.length, randomIndex;
-    
-          while (currentIndex !== 0) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-    
-            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-          }
-    
-          return array;
-        };
-    
-        const images = Array.from({ length: 85 }, (_, i) => `pics/background/${i + 1}.jpg`);
-        shuffle(images);
-    
-        $("body").backgroundSlideshow({
-          onBeforeTransition: (index) => console.log("before transition", index),
-          onAfterTransition: (index) => console.log("after transition", index),
-          transitionDuration: 3000,
-          fixed: true,
-          images
-        });
-      });
-    </script>
+    <script src="background-slideshow.js"></script>

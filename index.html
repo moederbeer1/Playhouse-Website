@@ -1,54 +1,232 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Version 1.0 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Join Playhouse SMP - A community-driven Minecraft server for adults. Play, build, and explore together.">
-    <meta name="author" content="Playhouse SMP Team">
-    <title>Welcome to Playhouse SMP</title>
-    <!-- Bootstrap and Custom CSS -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Playhouse SMP - Minecraft Server for Adults</title>
+    <meta name="title" content="Playhouse SMP - Minecraft Server for Adults">
+    <meta name="description" content="Adult-only Minecraft vanilla survival community. 50+ active adult players worldwide since 2020. Professional, mature environment. Hard difficulty, seasonal worlds. Ages 21+. Apply now!">
+    <meta name="keywords" content="minecraft server for adults, adult minecraft server, mature minecraft community, adult only minecraft, minecraft for grown ups, minecraft for adults only, vanilla minecraft server, adult gaming community, minecraft survival server, whitelisted adult minecraft, minecraft java server, playhouse smp">
+    <meta name="author" content="Playhouse SMP">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://playhousesmp.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://playhousesmp.com/">
+    <meta property="og:title" content="Playhouse SMP - Adult-Only Minecraft Survival Server">
+    <meta property="og:description" content="Mature Minecraft community for adult players only. 50+ active members, vanilla survival, hard difficulty, seasonal worlds. Professional gaming environment since 2020.">
+    <meta property="og:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+    <meta property="og:site_name" content="Playhouse SMP">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://playhousesmp.com/">
+    <meta name="twitter:title" content="Playhouse SMP - Adult-Only Minecraft Server">
+    <meta name="twitter:description" content="Mature Minecraft community for adult players. 50+ active members, vanilla survival, hard difficulty, seasonal worlds. Professional environment.">
+    <meta name="twitter:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+    
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Playhouse SMP",
+          "url": "https://playhousesmp.com/",
+          "logo": "https://playhousesmp.com/pics/playhousesmp.png",
+          "sameAs": [
+            "https://discord.gg/Tz9G9s6tqU",
+            "https://www.patreon.com/playhouseminecraft"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "Playhouse SMP",
+          "url": "https://playhousesmp.com/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://playhousesmp.com/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Random Background Preload Selection -->
+    <script>
+        // Pick 2 random background images (1-50) to preload
+        const bg1 = Math.floor(Math.random() * 50) + 1;
+        const bg2 = Math.floor(Math.random() * 50) + 1;
+
+        // Store globally so background-slideshow.js can use them
+        window.preloadedBackgrounds = [
+            `pics/background/${bg1}.jpg`,
+            `pics/background/${bg2}.jpg`
+        ];
+
+        // Dynamically create preload tags
+        document.write(`<link rel="preload" href="pics/background/${bg1}.jpg" as="image" type="image/jpeg">`);
+        document.write(`<link rel="preload" href="pics/background/${bg2}.jpg" as="image" type="image/jpeg">`);
+    </script>
+
+    <!-- Preload Critical Images for Performance -->
+    <link rel="preload" href="pics/playhouselogo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="pics/playhousesmp.png" as="image" type="image/png">
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="mycss.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons (if necessary) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Additional hero section enhancements */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFB84D !important;
+            text-shadow: 0 0 20px rgba(255, 184, 77, 0.6);
+        }
+        
+        .stats-counter + p {
+            color: #FFB84D !important;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover .feature-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .timeline-item {
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 3px solid #FFB84D;
+            background: rgba(20, 15, 35, 0.7);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item h4 {
+            color: #FFB84D !important;
+        }
+        
+        .timeline-item p {
+            color: #e0e0e0 !important;
+            text-align: left !important;
+        }
+        
+        .timeline-item:hover {
+            background: rgba(20, 15, 35, 0.9);
+            transform: translateX(10px);
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #FFB84D, transparent);
+            margin: 60px 0;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 4rem !important;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3.5rem !important;
+            }
+            .hero-content {
+                margin-top: 10px !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem !important;
+            }
+            .hero-content h1 span {
+                white-space: normal !important;
+            }
+            .hero-content {
+                margin-top: 10px !important;
+            }
+            .server-status {
+                padding: 15px 25px !important;
+                font-size: 1.1rem !important;
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            .server-status .stats-counter {
+                font-size: 2rem !important;
+            }
+            .btn {
+                font-size: 1rem !important;
+                padding: 12px 24px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem !important;
+            }
+            .hero-content .lead {
+                font-size: 1.2rem !important;
+            }
+            .hero-content {
+                margin-top: 0 !important;
+            }
+        }
+    </style>
 </head>
 <body class="home-page">
-    <!-- Overlay -->
-    <div class="overlay"></div>
-
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container navbar-container">
             <a class="navbar-brand" href="index.html">
                 <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dynmap.html">World Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Why Us?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#join">Join Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            More Info
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="downloads.html">Download Past Seasons</a>
-                            <a class="dropdown-item" href="photos.html">Our Photos</a>
-                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
-                            <a class="dropdown-item" href="members.html">Meet The Staff</a>
-                            <a class="dropdown-item" href="who.html">Who Are We</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="photos.html"><i class="fas fa-images"></i> Photos</a>
+                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft" target="_blank" rel="noopener noreferrer"><i class="fas fa-heart"></i> Patreon</a>
+                            <a class="dropdown-item" href="members.html"><i class="fas fa-users"></i> Staff</a>
+                            <a class="dropdown-item" href="who.html"><i class="fas fa-info-circle"></i> About Us</a>
                         </div>
                     </li>
                 </ul>
@@ -56,97 +234,297 @@
         </div>
     </nav>
 
-    <!-- Main Content Area -->
-    <div class="container">
-        <div class="layer content">
-                <div class="container mt-5 pt-5 inside-container">
-                    <h1 class="display-4 text-center mt-5">Welcome to Playhouse SMP</h1>
-                <!-- Player Count Displays -->
-                <div class="text-center">
 
-                <!-- Main Server -->
-                <p class="lead server-status">Current players on the <strong>Main Server</strong>: 
-                    <span id="playerCount1" data-playercounter-ip="minecraft.playhousesmp.com" data-playercounter-format="{online}/{max}">0/50</span>
-                </p>
-
-                <!-- Event Server (uncomment if needed) -->
-                <!--
-                <p class="lead server-status">Current players on the <strong>Event Server</strong>: 
-                    <span id="playerCount2" data-playercounter-ip="170.205.24.248:25594" data-playercounter-format="{online}/{max}">0/10</span>
-                </p>
-                -->
-
-
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center justify-content-center" style="position: relative; min-height: 100vh; margin-top: 0; padding-top: 80px;">
+        <div class="background-slideshow"></div>
+        <!-- Particle Overlay - Now inside hero section -->
+        <div class="particle-overlay"></div>
+        <div class="hero-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 60%, transparent 100%); z-index:1;"></div>
+        <div class="hero-content" style="position:relative; z-index:2; max-width: 1000px; padding: 20px; text-align: center; margin-top: 20px;">
+            <h1 class="display-3 mb-4" style="color:#fff; font-weight:700; font-family: 'Press Start 2P', cursive; font-size: 4.5rem; line-height: 1.4;">
+                Welcome to<br>
+                <span style="white-space: nowrap;">Playhouse SMP</span>
+            </h1>
+            <p class="lead mb-5" style="color:#FFB84D; font-size:1.5rem; font-weight:600; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                Where adults build, explore, and thrive together since 2020
+            </p>
+            
+            <div class="mb-5">
+                <div class="server-status" style="
+                    background: linear-gradient(135deg, rgba(42, 31, 71, 0.95) 0%, rgba(49, 39, 131, 0.95) 100%);
+                    border: 2px solid #FFB84D;
+                    box-shadow: 0 8px 32px rgba(255, 184, 77, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                    padding: 20px 40px;
+                    border-radius: 20px;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 15px;
+                ">
+                    <i class="fas fa-server" style="color: #FFB84D; font-size: 1.8rem;"></i>
+                    <span style="font-size: 1.3rem; color: #e0e0e0;">Players Online:</span> 
+                    <span id="playerCount1" data-playercounter-ip="minecraft.playhousesmp.com" class="stats-counter" style="font-size: 2.5rem;">0/50</span>
                 </div>
-
-                </div>
-            </header>
-
-            <section class="my-5">
-                <div class="container text-center inside-container">
-                    <h2>Explore Our World</h2>
-                    <p>Visit our interactive World Map, download past seasons, or apply to join the action in-game!</p>
-                    <a href="dynmap.html" class="btn btn-primary">View World Map</a>
-                    <a href="downloads.html" class="btn btn-primary">Download Past Seasons</a>
-                    <a href="https://discord.gg/Tz9G9s6tqU" class="btn btn-success">Join Our Community</a>
-                </div>
-            </section>
+            </div>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px;">
+                <a href="https://discord.gg/Tz9G9s6tqU" target="_blank" rel="noopener noreferrer" class="btn btn-success" style="font-size: 1.1rem; padding: 14px 32px;">
+                    <i class="fab fa-discord"></i> Apply to Join
+                </a>
+                <a href="#join" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 32px;">
+                    <i class="fas fa-info-circle"></i> How to Join
+                </a>
+                <a href="downloads.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 32px;">
+                    <i class="fas fa-download"></i> Downloads
+                </a>
+            </div>
+            
+            <div style="margin-top: 60px; animation: bounce 2s infinite; position: relative; z-index: 3;">
+                <a href="#features" style="color: #FFB84D; text-decoration: none;">
+                    <i class="fas fa-chevron-down" style="font-size: 2.5rem; opacity: 1; filter: drop-shadow(0 0 10px rgba(255, 184, 77, 0.8));"></i>
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Player Counter Script -->
+    <!-- Features Section -->
+    <section id="features" class="py-5" style="margin-top: 15px;">
+        <div class="container inside-container fade-in" style="background: rgba(42, 31, 71, 0.9) !important;">
+            <h2 class="styled-heading mb-5">What Makes Us Special</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4 feature-box">
+                    <div class="text-center">
+                        <i class="fas fa-users feature-icon" style="color:#FFB84D;"></i>
+                        <h4 class="text-white">Mature Community</h4>
+                        <p class="text-light">Ages 18+ with 50+ active players worldwide. We've been around since 2020!</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 feature-box">
+                    <div class="text-center">
+                        <i class="fas fa-crown feature-icon" style="color:#FFB84D;"></i>
+                        <h4 class="text-white">Seasonal Worlds</h4>
+                        <p class="text-light">Hard difficulty, vanilla gameplay with PaperMC. Currently on Season 7!</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 feature-box">
+                    <div class="text-center">
+                        <i class="fas fa-rocket feature-icon" style="color:#FFB84D;"></i>
+                        <h4 class="text-white">Dedicated Server</h4>
+                        <p class="text-light">99%+ uptime on a dedicated US host. Excellent performance and stability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" style="margin-top: 15px;">
+        <div class="container inside-container fade-in" style="background: rgba(42, 31, 71, 0.9) !important;">
+            <h2 class="styled-heading mb-5">About Playhouse SMP</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p style="font-size: 1.1rem; line-height: 1.8; text-align: left; color: #e0e0e0; margin-bottom: 1.5rem;">
+                        We're <strong style="color: #FFB84D;">Playhouse SMP</strong>, a vanilla survival Java server for adults <strong>(18+)</strong>. Looking for a friendly, steady, and tight community? <strong>This is it!</strong>
+                    </p>
+
+                    <p style="font-size: 1.1rem; line-height: 1.8; text-align: left; color: #e0e0e0; margin-bottom: 1.5rem;">
+                        Playhouse SMP has been around for <strong style="color: #FFB84D;">five years</strong>. The main reason we've made it this far is that we put a lot of effort and care into our community.
+                    </p>
+
+                    <p style="font-size: 1.1rem; line-height: 1.8; text-align: left; color: #e0e0e0; margin-bottom: 1.5rem;">
+                        We're currently on <strong style="color: #FFB84D;">Season 7</strong> with a brand new world in <strong>1.21.8!</strong>
+                    </p>
+
+                    <hr style="border-top: 1px solid rgba(255, 184, 77, 0.3); margin: 2rem 0;">
+
+                    <p style="font-size: 1.1rem; line-height: 1.8; text-align: left; color: #e0e0e0;">
+                        Between resets, we often have community events and side worlds like <strong>Skyblock</strong>, <strong>Create</strong>, <strong>Cobblemon</strong>, <strong>Hardcore</strong>, and more.
+                    </p>
+
+                    <p style="font-size: 1.1rem; line-height: 1.8; text-align: left; color: #e0e0e0;">
+                        Our server runs on a dedicated host in the US, providing excellent performance with <strong style="color: #FFB84D;">99%+ uptime</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Server Timeline -->
+    <section class="py-5" style="margin-top: 15px;">
+        <div class="container inside-container fade-in" style="background: rgba(42, 31, 71, 0.9) !important;">
+            <h2 class="styled-heading mb-5">Our Journey</h2>
+            <div class="timeline-item">
+                <h4 style="color: #FFB84D;"><i class="fas fa-star"></i> June 2020 - The Beginning</h4>
+                <p>Started by friends from different servers looking for a steady place to play at their own pace</p>
+            </div>
+            <div class="timeline-item">
+                <h4 style="color: #FFB84D;"><i class="fas fa-globe"></i> 2020-2022 - Seasons 1-4</h4>
+                <p>Community grew to 50+ players worldwide with events like Backwoods hardcore mode</p>
+            </div>
+            <div class="timeline-item">
+                <h4 style="color: #FFB84D;"><i class="fas fa-map"></i> 2023 - Season 5</h4>
+                <p>Trails & Tales update with amplified worlds and escape mansion events</p>
+            </div>
+            <div class="timeline-item">
+                <h4 style="color: #FFB84D;"><i class="fas fa-crown"></i> 2024 - Season 6</h4>
+                <p>Tricky Trials update - Extra long season with Skyblock, Create Mod, and Cobblemon events</p>
+            </div>
+            <div class="timeline-item">
+                <h4 style="color: #FFB84D;"><i class="fas fa-rocket"></i> 2025 - Season 7</h4>
+                <p>Currently thriving! New world with custom items, community projects, and more adventures ahead</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Join -->
+    <section id="join" class="py-5" style="margin-top: 15px;">
+        <div class="container inside-container fade-in" style="background: rgba(42, 31, 71, 0.9) !important;">
+            <h2 class="styled-heading mb-5">How to Join</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="text-align: center;">
+                        <div class="card-body">
+                            <div style="font-size: 3rem; color: #FFB84D; margin-bottom: 1rem;">1</div>
+                            <h4 class="text-white">Join Application Server</h4>
+                            <p>Visit our Discord applications server and read the rules carefully</p>
+                            <a href="https://discord.gg/Tz9G9s6tqU" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-sm">
+                                <i class="fab fa-discord"></i> Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="text-align: center;">
+                        <div class="card-body">
+                            <div style="font-size: 3rem; color: #FFB84D; margin-bottom: 1rem;">2</div>
+                            <h4 class="text-white">Submit Application</h4>
+                            <p>Fill out the application form and chat with our friendly recruiters</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="text-align: center;">
+                        <div class="card-body">
+                            <div style="font-size: 3rem; color: #FFB84D; margin-bottom: 1rem;">3</div>
+                            <h4 class="text-white">Get Whitelisted</h4>
+                            <p>Once accepted, you'll be invited to the main Discord and whitelisted on the server!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5" style="margin-top: 15px;">
+        <div class="container inside-container fade-in text-center" style="background: rgba(42, 31, 71, 0.9) !important;">
+            <h2 class="styled-heading mb-4">Ready to Build Something Amazing?</h2>
+            <p class="lead mb-4" style="color: #e0e0e0;">Join our thriving community of builders, explorers, and friends</p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                <a href="https://discord.gg/Tz9G9s6tqU" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" class="btn btn-success btn-lg">
+                    <i class="fab fa-discord"></i> Apply to Join
+                </a>
+                <a href="members.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-users"></i> Meet the Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background: rgba(15, 10, 30, 0.8); border-top: 1px solid rgba(255, 184, 77, 0.2); margin-top: 15px;">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://discord.gg/Tz9G9s6tqU" target="_blank" rel="noopener noreferrer" style="color: #FFB84D; margin: 0 10px; font-size: 1.5rem;" title="Apply via Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://www.patreon.com/playhouseminecraft" target="_blank" rel="noopener noreferrer" style="color: #FFB84D; margin: 0 10px; font-size: 1.5rem;" title="Support us on Patreon"><i class="fab fa-patreon"></i></a>
+            </div>
+            <p style="color: #a0a0a0; margin: 0;">&copy; 2025 Playhouse SMP. Built with ❤️ by our community.</p>
+            <p style="color: #808080; font-size: 0.9rem; margin-top: 10px;">
+                <a href="who.html" style="color: #808080;">About</a> &bull; 
+                <a href="members.html" style="color: #808080;">Staff</a> &bull; 
+                <a href="photos.html" style="color: #808080;">Gallery</a>
+            </p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/gh/leonardosnt/mc-player-counter/dist/mc-player-counter.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="jquery-background-slideshow.js"></script>
+    <script src="background-slideshow.js"></script>
+    <script src="particle-animation.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Player counter
             new MCPlayerCounter({
                 element: document.getElementById('playerCount1'),
                 ip: 'minecraft.playhousesmp.com',
-                format: '{online}/{max}' // Adjust as necessary
+                format: '{online}/{max}'
             });
             
-            // Uncomment if you are using the Event Server counter
-            // new MCPlayerCounter({
-            //     element: document.getElementById('playerCount2'),
-            //     ip: '170.205.24.248:25594',
-            //     format: '{online}/{max}' // Adjust as necessary
-            // });
+            // Scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            
+            // Counter animation
+            const animateCounter = (element) => {
+                const target = parseInt(element.getAttribute('data-target'));
+                const duration = 2000;
+                let step = target / (duration / 16);
+                
+                if (target === 99) {
+                    step = 1;
+                }
+                
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 16);
+            };
+            
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('.stats-counter').forEach(counter => {
+                if (counter.id !== 'playerCount1') {
+                    counterObserver.observe(counter);
+                }
+            });
+            
+            // Navbar scroll
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
         });
+        
+        // Background slideshow loaded from background-slideshow.js
     </script>
-
-    <!-- Full jQuery Library -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap and Popper Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- Background Slideshow Plugin -->
-    <script src="jquery-background-slideshow.js"></script>
-    <!-- Custom Script -->
-    <script>
-        $(document).ready(() => {
-          const shuffle = (array) => {
-            let currentIndex = array.length, randomIndex;
-      
-            while (currentIndex !== 0) {
-              randomIndex = Math.floor(Math.random() * currentIndex);
-              currentIndex--;
-      
-              [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-            }
-      
-            return array;
-          };
-      
-          const images = Array.from({ length: 87 }, (_, i) => `pics/background/${i + 1}.jpg`);
-          shuffle(images);
-      
-          $("body").backgroundSlideshow({
-            onBeforeTransition: (index) => console.log("before transition", index),
-            onAfterTransition: (index) => console.log("after transition", index),
-            transitionDuration: 3000,
-            fixed: true,
-            images
-          });
-        });
-      </script>
 </body>
 </html>

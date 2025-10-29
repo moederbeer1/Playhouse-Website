@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Block backups and non-public artifacts
+Disallow: /Old-Website-Backup-5-20-2024/
+Disallow: /Old-Website-Backup-5-20-2024.zip
+
+# Crawl-delay (optional; many bots ignore this)
+# Crawl-delay: 5
+
+Sitemap: https://playhousesmp.com/sitemap.xml

@@ -3,52 +3,117 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Photo Gallery | Playhouse SMP</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Gallery | Playhouse SMP - Minecraft Server for Adults</title>
+    <meta name="title" content="Gallery | Playhouse SMP - Minecraft Server for Adults">
+    <meta name="description" content="Browse photos from Playhouse SMP — an adult-only Minecraft survival community. See seasons, events, and builds from our mature vanilla server for adult players.">
+    <meta name="keywords" content="minecraft gallery, minecraft screenshots, minecraft smp photos, adult minecraft server, minecraft for adults only, playhouse smp gallery, minecraft builds, vanilla server images, mature minecraft community, adult gaming screenshots">
+    <meta name="author" content="Playhouse SMP">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://playhousesmp.com/photos.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://playhousesmp.com/photos.html">
+    <meta property="og:title" content="Playhouse SMP Gallery | Adult Minecraft Community Photos">
+    <meta property="og:description" content="Explore our seasons and events — photo gallery from our adult-only Minecraft SMP. Mature, professional gaming community.">
+    <meta property="og:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://playhousesmp.com/photos.html">
+    <meta name="twitter:title" content="Playhouse SMP Gallery | Adult Minecraft Server Photos">
+    <meta name="twitter:description" content="Explore photos from our adult-only Minecraft SMP community. Professional, mature environment.">
+    <meta name="twitter:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+
+    <!-- Random Background Preload Selection -->
+    <script>
+        const bg1 = Math.floor(Math.random() * 50) + 1;
+        const bg2 = Math.floor(Math.random() * 50) + 1;
+        window.preloadedBackgrounds = [`pics/background/${bg1}.jpg`, `pics/background/${bg2}.jpg`];
+        document.write(`<link rel="preload" href="pics/background/${bg1}.jpg" as="image" type="image/jpeg">`);
+        document.write(`<link rel="preload" href="pics/background/${bg2}.jpg" as="image" type="image/jpeg">`);
+    </script>
+
+    <!-- Preload Critical Images for Performance -->
+    <link rel="preload" href="pics/playhouselogo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="pics/playhousesmp.png" as="image" type="image/png">
+
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles -->
     <link href="mycss.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Isotope and Magnific Popup CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+    <style>
+        /* Gallery filter buttons styling */
+        .portfolio-menu ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .portfolio-menu ul li {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            background: linear-gradient(135deg, rgba(42, 31, 71, 0.9) 0%, rgba(49, 39, 131, 0.9) 100%);
+            border: 2px solid rgba(224, 167, 54, 0.3);
+            border-radius: 25px;
+            color: #FFB84D;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-menu ul li:hover {
+            background: linear-gradient(135deg, rgba(49, 39, 131, 1) 0%, rgba(42, 31, 71, 1) 100%);
+            border-color: #FFB84D;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 184, 77, 0.3);
+            color: #fff;
+        }
+
+        .portfolio-menu ul li.active {
+            background: linear-gradient(135deg, #FFB84D 0%, #e0a736 100%);
+            border-color: #FFB84D;
+            color: #0f0a1e;
+            box-shadow: 0 6px 25px rgba(255, 184, 77, 0.5);
+        }
+    </style>
 </head>
 <body class="photo-gallery-background">
     
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-            <div class="container navbar-container">
-                <a class="navbar-brand" href="index.html">
-                    <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="dynmap.html">World Map</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                More Info
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="downloads.html">Download Past Seasons</a>
-                                <a class="dropdown-item" href="photos.html">Our Photos</a>
-                                <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
-                                <a class="dropdown-item" href="members.html">Meet The Staff</a>
-                                <a class="dropdown-item" href="who.html">Who Are We</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container navbar-container">
+            <a class="navbar-brand" href="index.html">
+                <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Why Us?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#join">Join Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="photos.html"><i class="fas fa-images"></i> Photos</a>
+                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft" target="_blank" rel="noopener noreferrer"><i class="fas fa-heart"></i> Patreon</a>
+                            <a class="dropdown-item" href="members.html"><i class="fas fa-users"></i> Staff</a>
+                            <a class="dropdown-item" href="who.html"><i class="fas fa-info-circle"></i> About Us</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+
   
     <!-- Background Slideshow -->
     <div class="background-slideshow-container">
@@ -56,7 +121,7 @@
     </div>
 
     <!-- Main Content Area -->
-    <div class="container photo-gallery-container pt-5">
+    <div class="container photo-gallery-container" style="margin-top: 100px;">
         <h2 class="text-center mb-4 styled-heading">Photo Gallery</h2>
         <div class="portfolio-menu text-center mb-4">
             <ul class="list-inline">
@@ -70,6 +135,22 @@
         </div>
         
     </div>
+
+    <!-- Footer -->
+    <footer class="py-4" style="background: rgba(15, 10, 30, 0.8); border-top: 1px solid rgba(255, 184, 77, 0.2); margin-top: 15px;">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://discord.gg/Tz9G9s6tqU" target="_blank" rel="noopener noreferrer" style="color: #FFB84D; margin: 0 10px; font-size: 1.5rem;" title="Apply via Discord"><i class="fab fa-discord"></i></a>
+                <a href="https://www.patreon.com/playhouseminecraft" target="_blank" rel="noopener noreferrer" style="color: #FFB84D; margin: 0 10px; font-size: 1.5rem;" title="Support us on Patreon"><i class="fab fa-patreon"></i></a>
+            </div>
+            <p style="color: #a0a0a0; margin: 0;">&copy; 2025 Playhouse SMP. Built with ❤️ by our community.</p>
+            <p style="color: #808080; font-size: 0.9rem; margin-top: 10px;">
+                <a href="who.html" style="color: #808080;">About</a> &bull;
+                <a href="members.html" style="color: #808080;">Staff</a> &bull;
+                <a href="photos.html" style="color: #808080;">Gallery</a>
+            </p>
+        </div>
+    </footer>
 
     <!-- Bootstrap and jQuery Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -85,22 +166,100 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const gallery = document.getElementById('photoGallery');
+
+            // Categories to scan
             const categories = [
-                { name: 'season1', count: 82 },
-                { name: 'season5', count: 9 },
-                { name: 'eventServer', count: 7 }
+                { name: 'season1', maxAttempts: 100 },  // Try loading up to 100.jpg
+                { name: 'season5', maxAttempts: 20 },
+                { name: 'eventServer', maxAttempts: 20 }
             ];
-        
-            // Dynamically load images
-            categories.forEach(category => {
-                for (let i = 1; i <= category.count; i++) {
-                    const imgDiv = document.createElement('div');
-                    imgDiv.className = `col-md-4 item ${category.name}`;
-                    // Ensure the image has a 'data-mfp-src' attribute for Magnific Popup
-                    imgDiv.innerHTML = `<img src="pics/Gallery/${category.name}/${i}.jpg" class="img-fluid popup-btn" data-mfp-src="pics/Gallery/${category.name}/${i}.jpg">`;
-                    gallery.appendChild(imgDiv);
+
+            let loadedImagesCount = 0;
+
+            // Function to test if image exists and add it to gallery
+            function tryLoadImage(categoryName, imageNumber) {
+                return new Promise((resolve) => {
+                    const imgPath = `pics/Gallery/${categoryName}/${imageNumber}.jpg`;
+                    const testImg = new Image();
+
+                    testImg.onload = function() {
+                        // Image exists! Add it to gallery
+                        const imgDiv = document.createElement('div');
+                        imgDiv.className = `col-md-4 item ${categoryName}`;
+                        imgDiv.innerHTML = `<img src="${imgPath}" class="img-fluid popup-btn" data-mfp-src="${imgPath}">`;
+                        gallery.appendChild(imgDiv);
+                        loadedImagesCount++;
+                        resolve(true);
+                    };
+
+                    testImg.onerror = function() {
+                        // Image doesn't exist, skip it
+                        resolve(false);
+                    };
+
+                    testImg.src = imgPath;
+                });
+            }
+
+            // Function to shuffle/randomize gallery items
+            function shuffleGallery() {
+                const items = Array.from(gallery.children);
+                // Fisher-Yates shuffle
+                for (let i = items.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    gallery.appendChild(items[j]);
                 }
-            });
+                console.log('🔀 Gallery shuffled!');
+            }
+
+            // Function to sort gallery items by number (1-#)
+            function sortGalleryByNumber() {
+                const items = Array.from(gallery.children);
+                items.sort((a, b) => {
+                    // Extract image number from src path
+                    const aNum = parseInt(a.querySelector('img').src.match(/\/(\d+)\.jpg$/)[1]);
+                    const bNum = parseInt(b.querySelector('img').src.match(/\/(\d+)\.jpg$/)[1]);
+                    return aNum - bNum;
+                });
+                // Re-append in sorted order
+                items.forEach(item => gallery.appendChild(item));
+                console.log('🔢 Gallery sorted numerically');
+            }
+
+            // Load all images from all categories
+            async function loadAllImages() {
+                console.log('🖼️ Scanning for gallery images...');
+
+                for (const category of categories) {
+                    console.log(`📁 Scanning ${category.name}...`);
+                    const promises = [];
+
+                    // Try loading images 1 through maxAttempts
+                    for (let i = 1; i <= category.maxAttempts; i++) {
+                        promises.push(tryLoadImage(category.name, i));
+                    }
+
+                    // Wait for all attempts to complete for this category
+                    await Promise.all(promises);
+                }
+
+                console.log(`✅ Loaded ${loadedImagesCount} images total`);
+
+                // Shuffle on initial load (All Photos is default)
+                shuffleGallery();
+
+                // Reinitialize Magnific Popup after all images loaded
+                $('.portfolio-item').magnificPopup({
+                    delegate: '.popup-btn',
+                    type: 'image',
+                    gallery: {
+                        enabled: true
+                    }
+                });
+            }
+
+            // Start loading images
+            loadAllImages();
         
             // Filtering logic
             const buttons = document.querySelectorAll('.portfolio-menu ul li');
@@ -108,7 +267,15 @@
                 button.addEventListener('click', function() {
                     const filter = this.getAttribute('data-filter');
                     const items = document.querySelectorAll('.portfolio-item .item');
-        
+
+                    // If "All Photos" is clicked, shuffle the gallery
+                    if (filter === '*') {
+                        shuffleGallery();
+                    } else {
+                        // For category filters, sort by number
+                        sortGalleryByNumber();
+                    }
+
                     items.forEach(item => {
                         if (filter === '*' || item.classList.contains(filter.slice(1))) {
                             item.style.display = 'block';
@@ -116,50 +283,15 @@
                             item.style.display = 'none';
                         }
                     });
-        
+
                     // Update active state
                     buttons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
-        
-            // Reinitialize Magnific Popup for dynamically loaded images
-            $('.portfolio-item').magnificPopup({
-                delegate: '.popup-btn', // the selector for gallery item
-                type: 'image',
-                gallery: {
-                    enabled: true
-                }
-            });
         });
         </script>
-    <script>
-        $(document).ready(() => {
-          const shuffle = (array) => {
-            let currentIndex = array.length, randomIndex;
-      
-            while (currentIndex !== 0) {
-              randomIndex = Math.floor(Math.random() * currentIndex);
-              currentIndex--;
-      
-              [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-            }
-      
-            return array;
-          };
-      
-          const images = Array.from({ length: 87 }, (_, i) => `pics/background/${i + 1}.jpg`);
-          shuffle(images);
-      
-          $("body").backgroundSlideshow({
-            onBeforeTransition: (index) => console.log("before transition", index),
-            onAfterTransition: (index) => console.log("after transition", index),
-            transitionDuration: 3000,
-            fixed: true,
-            images
-          });
-        });
-      </script>
+    <script src="background-slideshow.js"></script>
         
 </body>
 </html>

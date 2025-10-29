@@ -3,7 +3,42 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Playhouse Map | Playhouse SMP</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Live Map | Playhouse SMP - Minecraft Server for Adults</title>
+    <meta name="title" content="Live Map | Playhouse SMP - Minecraft Server for Adults">
+    <meta name="description" content="View the Playhouse SMP live map (Dynmap). Track builds and player activity on our adult-only Minecraft vanilla survival server. Professional, mature gaming community.">
+    <meta name="keywords" content="minecraft dynmap, live map minecraft, minecraft smp map, playhouse smp map, adult minecraft server, minecraft server for adults, adult only minecraft, vanilla server map, mature minecraft map">
+    <meta name="author" content="Playhouse SMP">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://playhousesmp.com/dynmap.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://playhousesmp.com/dynmap.html">
+    <meta property="og:title" content="Playhouse SMP Live Map | Adult-Only Minecraft Server">
+    <meta property="og:description" content="View the Playhouse SMP live map (Dynmap). Track builds and player activity on our adult-only Minecraft vanilla survival server.">
+    <meta property="og:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://playhousesmp.com/dynmap.html">
+    <meta name="twitter:title" content="Playhouse SMP Live Map | Adult Minecraft Server">
+    <meta name="twitter:description" content="View the live Dynmap for our adult-only Minecraft SMP. Professional, mature community.">
+    <meta name="twitter:image" content="https://playhousesmp.com/pics/playhousesmp.png">
+
+    <!-- Random Background Preload Selection -->
+    <script>
+        const bg1 = Math.floor(Math.random() * 50) + 1;
+        const bg2 = Math.floor(Math.random() * 50) + 1;
+        window.preloadedBackgrounds = [`pics/background/${bg1}.jpg`, `pics/background/${bg2}.jpg`];
+        document.write(`<link rel="preload" href="pics/background/${bg1}.jpg" as="image" type="image/jpeg">`);
+        document.write(`<link rel="preload" href="pics/background/${bg2}.jpg" as="image" type="image/jpeg">`);
+    </script>
+
+    <!-- Preload Critical Images for Performance -->
+    <link rel="preload" href="pics/playhouselogo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="pics/playhousesmp.png" as="image" type="image/png">
+
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles -->
@@ -16,36 +51,30 @@
             <a class="navbar-brand" href="index.html">
                 <img src="pics/playhouselogo.svg" alt="Playhouse SMP Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dynmap.html">World Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/Tz9G9s6tqU">Join Us!</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Why Us?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#join">Join Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="downloads.html">Downloads</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            More Info
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="downloads.html">Download Past Seasons</a>
-                            <a class="dropdown-item" href="photos.html">Our Photos</a>
-                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft">Patreon</a>
-                            <a class="dropdown-item" href="members.html">Meet The Staff</a>
-                            <a class="dropdown-item" href="who.html">Who Are We</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="photos.html"><i class="fas fa-images"></i> Photos</a>
+                            <a class="dropdown-item" href="https://www.patreon.com/playhouseminecraft" target="_blank" rel="noopener noreferrer"><i class="fas fa-heart"></i> Patreon</a>
+                            <a class="dropdown-item" href="members.html"><i class="fas fa-users"></i> Staff</a>
+                            <a class="dropdown-item" href="who.html"><i class="fas fa-info-circle"></i> About Us</a>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
+
     <!-- Dynmap Embed -->
     <iframe src="https://dynmap.playhousesmp.com/"></iframe>
 
